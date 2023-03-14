@@ -7,6 +7,7 @@ import { IncomeFormComponent } from './income-form/income-form.component';
 import { DeductionFormComponent } from './deduction-form/deduction-form.component';
 import { ExemptionFormComponent } from './exemption-form/exemption-form.component';
 import { CompareTaxesComponent } from './compare-taxes/compare-taxes.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CompareTaxesComponent } from './compare-taxes/compare-taxes.component';
     IncomeFormComponent,
     DeductionFormComponent,
     ExemptionFormComponent,
-    CompareTaxesComponent
+    CompareTaxesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
