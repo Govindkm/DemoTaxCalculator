@@ -1,1 +1,21 @@
-<p>exemption-form works!</p>
+<form class="container mt-3" [formGroup]="exemptionForm">
+    <div class="row">
+      <div class="col-lg-6">
+        <h4>Salary Components</h4>
+        <small class="text-danger">Note: Provide annual combined values</small>
+        <div class="form-group" formGroupName="salaryComponents">
+          <div class="form-group">
+            <label for="hra">Exempted HRA</label>
+            <input type="number" id="hra" class="form-control" formControlName="hra">
+          </div>
+          <small *ngIf="exemptionForm.get('salaryComponents').get('hra').touched && exemptionForm.get('salaryComponents').get('hra').errors" class="text-danger">
+            Exemption under HRA cannot be more than &#x20b9;50000
+          </small>
+          <div class="form-group">
+            <label for="lta">Exempted LTA</label>
+            <input type="number" id="lta" class="form-control" formControlName="lta">
+          </div>
+        </div>
+      </div>  
+    </div>
+  </form>

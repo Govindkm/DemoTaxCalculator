@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { DeductionFormComponent } from './deduction-form/deduction-form.componen
 import { ExemptionFormComponent } from './exemption-form/exemption-form.component';
 import { CompareTaxesComponent } from './compare-taxes/compare-taxes.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ComparisionTableComponent } from './comparision-table/comparision-table.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { NavbarComponent } from './navbar/navbar.component';
     DeductionFormComponent,
     ExemptionFormComponent,
     CompareTaxesComponent,
-    NavbarComponent
+    NavbarComponent,
+    ComparisionTableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

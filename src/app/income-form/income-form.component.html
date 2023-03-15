@@ -1,1 +1,60 @@
-<p>income-form works!</p>
+<form class="container mt-3" [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Fixed Monthly Components:</h4>
+      <div class="form-group">
+        <label for="basicpay">Basic Pay:</label>
+        <input type="number" id="basicpay" name="basicpay" formControlName="basicpay" class="form-control" required
+          min="1" value=0 oninput="validity.valid||(value=0);">
+        <small
+          *ngIf="myForm.controls['basicpay'].errors && myForm.controls['basicpay'].touched && !myForm.controls['basicpay'].hasError('required')"
+          class="text-danger">Basic pay cannot be zero or negative</small>
+        <small *ngIf="myForm.controls['basicpay'].hasError('required') && myForm.controls['basicpay'].touched"
+          class="text-danger">Basic pay cannot be empty</small>
+      </div>
+      <div class="form-group">
+        <label for="da">Dearness Allowance(DA):</label>
+        <input type="number" id="da" name="da" formControlName="da" class="form-control" min="0" value=0
+          oninput="validity.valid||(value=0);">
+      </div>
+      <div class="form-group">
+        <label for="hra">HRA:</label>
+        <input type="number" id="hra" name="hra" formControlName="hra" class="form-control" min="0" value=0
+          oninput="validity.valid||(value=0);">
+      </div>
+      <div class="form-group">
+        <label for="lta">LTA:</label>
+        <input type="number" id="lta" name="lta" formControlName="lta" class="form-control" min="0" value=0
+          oninput="validity.valid||(value=0);">
+      </div>
+      <div class="form-group">
+        <label for="cityallowance">City Allowance:</label>
+        <input type="number" id="cityallowance" name="cityallowance" formControlName="cityallowance"
+          class="form-control" min="0" value=0 oninput="validity.valid||(value=0);">
+      </div>
+      <div class="form-group">
+        <label for="miscellaneous">Miscellaneous:</label>
+        <input type="number" id="miscellaneous" name="miscellaneous" formControlName="miscellaneous"
+          class="form-control" min="0" value=0 oninput="validity.valid||(value=0);">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h4>Variable Components:</h4>
+      <div class="form-group">
+        <label for="monthlybonus" class="form-label">Monthly Bonus:</label>
+        <input type="number" id="monthlybonus" name="monthlybonus" formControlName="monthlybonus" class="form-control"
+          min="0" value=0 oninput="validity.valid||(value=0);">
+      </div>
+      <div class="form-group">
+        <label for="quaterlybonus" class="form-label">Quarterly Bonus:</label>
+        <input type="number" id="quaterlybonus" name="quaterlybonus" formControlName="quaterlybonus"
+          class="form-control" min="0" value=0 oninput="validity.valid||(value=0);">
+      </div>
+      <div class="form-group">
+        <label for="annualbonus" class="form-label">Annual Bonus:</label>
+        <input type="number" id="annualbonus" name="annualbonus" formControlName="annualbonus" class="form-control"
+          min="0" value=0 oninput="validity.valid||(value=0);">
+      </div>
+    </div>
+  </div>
+</form>
