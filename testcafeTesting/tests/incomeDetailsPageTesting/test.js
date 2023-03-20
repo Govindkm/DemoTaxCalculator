@@ -29,15 +29,15 @@ test('Validate Income Form Fields with Journeys', async (t) => {
          .typeText(annualBonusInput, '12000'); 
 
   //Assert
-  await t.expect(basicPayInput.value).eql('010000')
-         .expect(dearnessAllowanceInput.value).eql('02000')
-         .expect(hraInput.value).eql('05000')
-         .expect(ltaInput.value).eql('08000')
-         .expect(cityAllowanceInput.value).eql('01500')
-         .expect(miscellaneousInput.value).eql('03500')
-         .expect(monthlyBonusInput.value).eql('07500')
-         .expect(quarterlyBonusInput.value).eql('06000')
-         .expect(annualBonusInput.value).eql('012000');
+  await t.expect(basicPayInput.value).eql('10000')
+         .expect(dearnessAllowanceInput.value).eql('2000')
+         .expect(hraInput.value).eql('5000')
+         .expect(ltaInput.value).eql('8000')
+         .expect(cityAllowanceInput.value).eql('1500')
+         .expect(miscellaneousInput.value).eql('3500')
+         .expect(monthlyBonusInput.value).eql('7500')
+         .expect(quarterlyBonusInput.value).eql('6000')
+         .expect(annualBonusInput.value).eql('12000');
 });
 
 test("Basic pay field validation", async (t) => {

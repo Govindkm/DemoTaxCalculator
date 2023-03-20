@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://tax-calculator-api.herokuapp.com'
+    apiUrl: 'https://tax-calculator-api.herokuapp.com/api/'
 };

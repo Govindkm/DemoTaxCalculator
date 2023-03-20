@@ -1,15 +1,11 @@
 <form class="container mt-3" [formGroup]="deductionForm" (ngSubmit)="submitForm()">
   <div class="row">
     <div class="col-lg-6">
-      <h4>Annual Deductions under Section 80C (Maximum Rs 1.5 Lakh)</h4>
+      <h4>Annual Deductions under Section 80C (Maximum Rs 2 Lakh)</h4>
       <div class="form-group" formGroupName="section80C">
         <div class="form-group">
           <label for="ppf">PPF</label>
           <input type="number" id="ppf" class="form-control" formControlName="ppf" value="0" min="0">
-        </div>
-        <div class="form-group">
-          <label for="nps">NPS</label>
-          <input type="number" id="nps" class="form-control" formControlName="nps" value="0" min="0">
         </div>
         <div class="form-group">
           <label for="elss">ELSS</label>
@@ -20,10 +16,22 @@
           <input type="number" id="others" class="form-control" formControlName="others" value="0" min="0">
         </div>
       </div>
+      <div class="form-group">
+        <label for="nps">NPS</label>
+        <input type="number" id="nps" class="form-control" formControlName="nps" value="0" min="0">
+      </div>
       <small class="text-info">Extra upto &#x20b9;50000 can be claimed if you are investing under NPS</small>
-      <small
+      <div>
+        <small
         *ngIf="deductionForm.get('section80C').errors && deductionForm.get('section80C').touched && deductionForm.get('section80C').dirty"
-        class="text-danger" id="text-danger-80C">Deduction under 80C cannot be more than &#x20b9;150000</small>
+        class="text-danger" id="text-danger-80C">Deduction under 80C cannot be more than &#x20b9;150000
+      </small>
+      </div>
+      <div>
+        <small *ngIf="deductionForm.get('nps').errors" class="text-danger">
+          NPS deduction cannot be more than &#x20b9;50000 
+        </small>
+      </div>
     </div>
     <div class="col-lg-6">
       <h4>Annual Deductions under Section 80D (Maximum Rs 1 Lakh based on Age)</h4>

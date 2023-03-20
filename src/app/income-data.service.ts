@@ -78,14 +78,14 @@ export class IncomeDataService {
     this.deductionForm = this.fb.group({
       section80C: this.fb.group({
         ppf: [0],
-        nps: [0],
         elss: [0],
         others: [0]
       }, { validator: this.sum80Cvalidator }),
+      nps: [0, Validators.max(50000)],
       section80D: this.fb.group({
         yourParentsAge: [false, Validators.requiredTrue],
-        parentsHIS: [0],
-        selfHIS: [0]
+        parentsHIS: [0, Validators.max(50000)],
+        selfHIS: [0, Validators.max(25000)]
       }, { validator: this.sum80Dvalidator }),
       section80G: [0, Validators.max(10000)]
     });
@@ -94,7 +94,7 @@ export class IncomeDataService {
   sum80Dvalidator(group: FormGroup): any {
     const sum = Object.keys(group.controls)
       .map(key => {
-        if(key=="yourAge")
+        if(key=="yourParentAge")
         {
           return 0;
         }
@@ -102,13 +102,19 @@ export class IncomeDataService {
         return value;
       })
       .reduce((sum, val) => sum + val, 0);
-      return sum > 100000 ? { sumTooLarge: true } : null;
+      if(group.get('yourParentsAge')?.value)
+      {
+        return sum > 75000 ? { sumTooLarge: true } : null;
+      } else {
+        return sum > 50000 ? { sumTooLarge: true } : null;
+      }
   }
 
   sum80Cvalidator(group: FormGroup): any {
     const sum = Object.keys(group.controls)
       .map(key => {
         var value = parseInt(group.get(key)?.value);
+        console.log(key, value);
         return value;
       })
       .reduce((sum, val) => sum + val, 0);

@@ -15,10 +15,10 @@ export interface incomeFormInterface {
 export interface deductionFormInterface {
     section80C: FormGroup<{
         ppf: FormControl,
-        nps: FormControl,
         elss: FormControl,
         others: FormControl
     }>,
+    nps: FormControl,
     section80D: FormGroup<{
         yourParentsAge?: FormControl,
         seniorCitizenParents?: FormControl,
