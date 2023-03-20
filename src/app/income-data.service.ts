@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { deductionFormInterface, exemptionFormInterface, incomeFormInterface } from './models/forms.Interface';
+import { AlertService } from './services/alert.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IncomeDataService {
 
-  incomeform: any;
-  deductionForm: FormGroup<{ section80C: FormGroup<any>; section80D: FormGroup<any>; section80G: FormControl<number | null>; }> = new FormGroup({ section80C: new FormGroup({}), section80D: new FormGroup({}), section80G: new FormControl(0, [Validators.max(10000)]) });
-  exemptionForm: FormGroup<{ salaryComponents: FormGroup<{ hra: FormControl<number | null>; lta: FormControl<number | null>; }>; }> = new FormGroup({ salaryComponents: new FormGroup({ hra: new FormControl(0), lta: new FormControl(0) }) });
+  incomeform!: FormGroup<incomeFormInterface>;
+  deductionForm!: FormGroup<deductionFormInterface>;
+  exemptionForm!: FormGroup<exemptionFormInterface>;
+
+  isLoading: boolean = false; 
 
   // The gross income of the user.
   grossAnnualIncome: number = 0;
@@ -19,69 +26,47 @@ export class IncomeDataService {
   // The taxable income of the user using the new tax rules. 
   newTaxableIncome: number = 0;
 
-  constructor(private fb: FormBuilder) {
+  apiURL: string = 'http://localhost:3000/api/';
+
+  constructor(private fb: FormBuilder, private alertService: AlertService, private router: Router, private http: HttpClient) {
     this.createIncomeForm();
     this.createDeductionForm();
     this.createExemptionForm();
+    this.alertService.options = {closeButton: true, positionClass: "toast-bottom-center"};
+    this.apiURL = environment.apiUrl + 'calculation/';
   }
 
-  calculateGrossIncome() {
-    const basicpay = this.incomeform?.get('basicpay')?.value;
-    const da = this.incomeform?.get('da')?.value;
-    const hra = this.incomeform?.get('hra')?.value;
-    const lta = this.incomeform?.get('lta')?.value;
-    const cityallowance = this.incomeform?.get('cityallowance')?.value;
-    const miscellaneous = this.incomeform?.get('miscellaneous')?.value;
-    const monthlybonus = this.incomeform?.get('monthlybonus')?.value;
-    const quaterlybonus = this.incomeform?.get('quaterlybonus')?.value;
-    const annualbonus = this.incomeform?.get('annualbonus')?.value;
+  submitForms() {
+    const url = this.apiURL+'/getTaxes';
+    const data = {
+      incomeForm: this.incomeform?.value,
+      deductionForm: this.deductionForm?.value,
+      exemptionForm: this.exemptionForm?.value
+    }
 
-    const sum = (basicpay + da + hra + lta + cityallowance + miscellaneous + monthlybonus) * 12 + quaterlybonus * 4 + annualbonus;
-    this.grossAnnualIncome = sum;
-  }
-
-  getStandardDeduction() {
-    //Currently, the standard deduction is 50000. But this can be changed in the future.
-    return 50000;
-  }
-
-  getDeductions() {
-    const section80C = this.deductionForm?.get('section80C')?.value;
-    const section80D = this.deductionForm?.get('section80D')?.value;
-    const section80G = this.deductionForm?.get('section80G')?.value;
-    const sum = 0
-    return sum;
-  }
-
-  // We need to calculate the gross income before we can calculate the taxable income.
-  calculateNewTaxableIncome() {
-    const standardDeduction = this.getStandardDeduction();
-    const sum = this.grossAnnualIncome - standardDeduction;
-    this.newTaxableIncome = sum;
-  }
-
-  calculateOldTaxableIncome() {
-    const standardDeduction = this.getStandardDeduction();
-    const allDeductibles = this.getDeductions();
-    const sum = this.grossAnnualIncome - standardDeduction - allDeductibles;
-    this.oldTaxableIncome = sum;
-  }
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }
+    return this.http.post(url, data);
+  } 
 
 
   createIncomeForm() {
     this.incomeform = new FormGroup({
-      basicpay: new FormControl(0, [
+      basicpay: new FormControl('', [
         Validators.required,
         Validators.min(1)
       ]),
-      da: new FormControl(0),
-      hra: new FormControl(0),
-      lta: new FormControl(0),
-      cityallowance: new FormControl(0),
-      miscellaneous: new FormControl(0),
-      monthlybonus: new FormControl(0),
-      quaterlybonus: new FormControl(0),
-      annualbonus: new FormControl(0)
+      da: new FormControl(),
+      hra: new FormControl(),
+      lta: new FormControl(),
+      cityallowance: new FormControl(),
+      miscellaneous: new FormControl(),
+      monthlybonus: new FormControl(),
+      quaterlybonus: new FormControl(),
+      annualbonus: new FormControl()
     });
   }
 
@@ -98,7 +83,8 @@ export class IncomeDataService {
         others: [0]
       }, { validator: this.sum80Cvalidator }),
       section80D: this.fb.group({
-        employerHIS: [0],
+        yourParentsAge: [false, Validators.requiredTrue],
+        parentsHIS: [0],
         selfHIS: [0]
       }, { validator: this.sum80Dvalidator }),
       section80G: [0, Validators.max(10000)]
@@ -108,12 +94,15 @@ export class IncomeDataService {
   sum80Dvalidator(group: FormGroup): any {
     const sum = Object.keys(group.controls)
       .map(key => {
+        if(key=="yourAge")
+        {
+          return 0;
+        }
         var value = parseInt(group.get(key)?.value);
         return value;
       })
       .reduce((sum, val) => sum + val, 0);
-
-    return sum > 100000 ? { sumTooLarge: true } : null;
+      return sum > 100000 ? { sumTooLarge: true } : null;
   }
 
   sum80Cvalidator(group: FormGroup): any {
@@ -135,28 +124,30 @@ export class IncomeDataService {
       salaryComponents: this.fb.group({
         hra: [0],
         lta: [0],
-      }, { validator: this.exemptionValidators }),
+      }, { validator: this.exemptionValidators.bind(this) }),
     });
   }
 
   exemptionValidators(form: FormGroup) {
     const hra = this.incomeform?.get('hra')?.value;
     const lta = this.incomeform?.get('lta')?.value;
-    const annualHra = hra * 12;
-    const annualLta = lta * 12;
+
+    const annualHra = hra ? hra * 12: 0;
+    const annualLta = lta ? lta * 12: 0;
     var errors = { hraTooLarge: false, ltaTooLarge: false };
-    if (annualHra < form.get('salaryComponents')?.get('hra')?.value) {
+
+    
+    if (annualHra < form.value.hra) {
       errors.hraTooLarge = true;
     }
 
-    if (annualLta < form.get('salaryComponents')?.get('lta')?.value) {
+    if (annualLta < form.value.lta){
       errors.ltaTooLarge = true;
     }
     return errors.hraTooLarge || errors.ltaTooLarge ? errors : null;
   }
 
   getExemptionForm(): FormGroup {
-    console.log(this.incomeform);
     return this.exemptionForm;
   }
 }

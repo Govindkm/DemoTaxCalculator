@@ -1,7 +1,7 @@
 <form class="container mt-3" [formGroup]="deductionForm" (ngSubmit)="submitForm()">
   <div class="row">
     <div class="col-lg-6">
-      <h4>Annual Components under Section 80C (Maximum Rs 1.5 Lakh)</h4>
+      <h4>Annual Deductions under Section 80C (Maximum Rs 1.5 Lakh)</h4>
       <div class="form-group" formGroupName="section80C">
         <div class="form-group">
           <label for="ppf">PPF</label>
@@ -20,22 +20,28 @@
           <input type="number" id="others" class="form-control" formControlName="others" value="0" min="0">
         </div>
       </div>
+      <small class="text-info">Extra upto &#x20b9;50000 can be claimed if you are investing under NPS</small>
       <small
         *ngIf="deductionForm.get('section80C').errors && deductionForm.get('section80C').touched && deductionForm.get('section80C').dirty"
-        class="text-danger">Deduction under 80C cannot be more than &#x20b9;150000</small>
+        class="text-danger" id="text-danger-80C">Deduction under 80C cannot be more than &#x20b9;150000</small>
     </div>
     <div class="col-lg-6">
       <h4>Annual Deductions under Section 80D (Maximum Rs 1 Lakh based on Age)</h4>
       <div class="form-group" formGroupName="section80D">
+        <div class="form-check">
+          <input type="checkbox" id="yourAge" name="yourParentsAge" formControlName="yourParentsAge" class="form-check-input">
+          <label for="yourAge">Are your parents senior citizen with Age>60?</label>
+        </div>
         <div>
-          <label for="employerInsurance">Employer Health Insurance Schemes</label>
-          <input type="number" id="employerInsurance" name="employerInsurance" formControlName="employerHIS"
+          <label for="employerInsurance">Parents Health Insurance Schemes</label>
+          <input type="number" id="parentsInsurance" name="parentsInsurance" formControlName="parentsHIS"
             class="form-control" value="0" min="0">
         </div>
         <div>
           <label for="selfInsurance">Self Health Insurance Schemes</label>
           <input type="number" id="selfInsurance" name="selfInsurance" formControlName="selfHIS" class="form-control"
             value="0" min="0">
+            <small class="text-info">Self Health Insurance includes insurance costs for individual and dependents apart from parents</small>
         </div>
         <small class="text-danger">Note: The amount exempted under 80D depends on various factors. Check: <a
             href="https://cleartax.in/s/medical-insurance">Clear Tax: Medical Claims</a></small>

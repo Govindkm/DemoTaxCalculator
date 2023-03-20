@@ -2,5 +2,8 @@
     <a class="nav-link" routerLink="/income-details" routerLinkActive="active">Income Details</a>
     <a class="nav-link" routerLink="/deductions" routerLinkActive="active">Deductions</a>
     <a class="nav-link" routerLink="/exemptions" routerLinkActive="active">Exemptions</a>
-    <a class="nav-link" routerLink="/summary" routerLinkActive="active">Tax Summary</a>
+    <a class="nav-link" routerLink="/summary" routerLinkActive="active">
+        <span *ngIf="dataService.isLoading">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </span>Tax Summary</a>
 </nav>

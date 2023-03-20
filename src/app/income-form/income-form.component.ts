@@ -10,7 +10,4 @@ import { IncomeDataService } from '../income-data.service';
 export class IncomeFormComponent {
   myForm: FormGroup = this.incomeDataService.getIncomeForm();
   constructor(private incomeDataService: IncomeDataService) {}
-  submitForm() {
-    console.log(this.myForm.value);
-  }
 }
