@@ -8,9 +8,5 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'CalculateYourTax';
-  constructor(private router: Router) { }
-
-  public next() {
-    console.log(this.router.getCurrentNavigation());
-  }
+  constructor() { }
 }

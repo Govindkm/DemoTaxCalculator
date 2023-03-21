@@ -21,6 +21,9 @@ describe('CompareTaxesComponent', () => {
       ]
     })
     .compileComponents();
+
+    //Mock the return value of the submitForms method
+    incomeDataServiceMock.submitForms.and.returnValue(of({}));
   });
 
   beforeEach(() => {
@@ -31,7 +34,7 @@ describe('CompareTaxesComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create the component', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 });
