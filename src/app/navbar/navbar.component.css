@@ -1,0 +1,36 @@
+nav{
+    padding-bottom: 0.5rem;
+}
+
+.nav-link {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0;
+    margin: 5px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px #ccc;
+  }
+  
+  .nav-link:hover {
+    background-color: #87cefa;
+    color: #000;
+    box-shadow: 4px 4px #ccc;
+  }
+
+  .nav-link {
+    transition: all .2s ease-in-out;
+  }
+   
+  .nav-link:hover {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+    transform: translateY(-5px);
+    font-size: 1.1em;
+  }
+
+  .nav-link {
+    border-radius: 5px;
+  }
+  
