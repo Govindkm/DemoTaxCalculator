@@ -1,8 +1,8 @@
 <nav class="nav nav-tabs nav-pills justify-content-center mt-5">
-    <a class="nav-link" routerLink="/income-details" routerLinkActive="active">Income Details</a>
-    <a class="nav-link" routerLink="/deductions" routerLinkActive="active">Deductions</a>
-    <a class="nav-link" routerLink="/exemptions" routerLinkActive="active">Exemptions</a>
-    <a class="nav-link" routerLink="/summary" routerLinkActive="active">
+    <a class="nav-link" routerLink="/income-details" routerLinkActive="active" id="incometab">Income Details</a>
+    <a class="nav-link" routerLink="/deductions" routerLinkActive="active" id="deductionstab">Deductions</a>
+    <a class="nav-link" routerLink="/exemptions" routerLinkActive="active" id="exemptionstab">Exemptions</a>
+    <a class="nav-link" routerLink="/summary" routerLinkActive="active" id="summarytab">
         <span *ngIf="dataService.isLoading">
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </span>Tax Summary</a>
