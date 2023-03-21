@@ -1,3 +1,10 @@
 .d-flex{
     flex-direction: column;
 }
+.heading p {
+  transition: all 0.3s ease-out;
+}
+
+.heading p:hover {
+  transform: translateX(10px);
+}
