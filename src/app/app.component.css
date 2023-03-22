@@ -1,0 +1,17 @@
+.d-flex{
+    flex-direction: column;
+}
+.heading p {
+  transition: all 0.3s ease-out;
+}
+
+.heading p:hover {
+  transform: translateX(10px);
+}
+
+#router-outlet {
+    box-shadow: 8px 8px 15px #aaa;
+    padding: 2rem;
+    border-radius: 25px;
+    background-color: rgba(240, 240, 240, 0.8);
+  }

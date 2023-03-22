@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IncomeDataService } from '../income-data.service';
 
 @Component({
   selector: 'app-income-form',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./income-form.component.css']
 })
 export class IncomeFormComponent {
-
+  myForm: FormGroup = this.incomeDataService.getIncomeForm();
+  constructor(private incomeDataService: IncomeDataService) {}
 }

@@ -1,1 +1,74 @@
-<p>deduction-form works!</p>
+<form class="container mt-3" [formGroup]="deductionForm" (ngSubmit)="submitForm()">
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Annual Deductions under Section 80C (Maximum Rs 2 Lakh)</h4>
+      <div class="form-group" formGroupName="section80C">
+        <div class="form-group">
+          <label for="ppf">PPF</label>
+          <input type="number" id="ppf" class="form-control" formControlName="ppf" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label for="elss">ELSS</label>
+          <input type="number" id="elss" class="form-control" formControlName="elss" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label for="others">Others</label>
+          <input type="number" id="others" class="form-control" formControlName="others" value="0" min="0">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nps">NPS</label>
+        <input type="number" id="nps" class="form-control" formControlName="nps" value="0" min="0">
+      </div>
+      <small class="text-info">Extra upto &#x20b9;50000 can be claimed if you are investing under NPS</small>
+      <div>
+        <small
+        *ngIf="deductionForm.get('section80C').errors && deductionForm.get('section80C').touched && deductionForm.get('section80C').dirty"
+        class="text-danger" id="text-danger-80C">Deduction under 80C cannot be more than &#x20b9;150000
+      </small>
+      </div>
+      <div>
+        <small *ngIf="deductionForm.get('nps').errors" class="text-danger">
+          NPS deduction cannot be more than &#x20b9;50000 
+        </small>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h4>Annual Deductions under Section 80D (Maximum Rs 1 Lakh based on Age)</h4>
+      <div class="form-group" formGroupName="section80D">
+        <div class="form-check">
+          <input type="checkbox" id="yourAge" name="yourParentsAge" formControlName="yourParentsAge" class="form-check-input">
+          <label for="yourAge">Are your parents senior citizen with Age>60?</label>
+        </div>
+        <div>
+          <label for="employerInsurance">Parents Health Insurance Schemes</label>
+          <input type="number" id="parentsInsurance" name="parentsInsurance" formControlName="parentsHIS"
+            class="form-control" value="0" min="0">
+        </div>
+        <div>
+          <label for="selfInsurance">Self Health Insurance Schemes</label>
+          <input type="number" id="selfInsurance" name="selfInsurance" formControlName="selfHIS" class="form-control"
+            value="0" min="0">
+            <small class="text-info">Self Health Insurance includes insurance costs for individual and dependents apart from parents</small>
+        </div>
+        <small class="text-danger">Note: The amount exempted under 80D depends on various factors. Check: <a
+            href="https://cleartax.in/s/medical-insurance">Clear Tax: Medical Claims</a></small>
+
+        <small
+          *ngIf="deductionForm.get('section80D').errors && deductionForm.get('section80D').touched && deductionForm.get('section80D').dirty"
+          class="text-danger">Deduction under 80D cannot be more than &#x20b9;100000</small>
+      </div>
+
+
+      <h4>Others</h4>
+      <div class="form-group">
+        <label for="section80G">Section 80G (Donations Maximum 10000)</label>
+        <input type="number" id="section80G" name="section80G" formControlName="section80G" class="form-control"
+          value="0" min="0">
+          <small *ngIf="deductionForm.get('section80G').touched && deductionForm.get('section80G').errors" class="text-danger">
+            Deduction under 80G cannot be more than &#x20b9;10000
+          </small>
+      </div>
+    </div>
+  </div>
+</form>

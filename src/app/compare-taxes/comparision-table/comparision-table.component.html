@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>New Regime</th>
+        <th>Old Regime</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of getRowsData()">
+        <td><strong>{{ row[0] }}</strong></td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+      </tr>
+    </tbody>
+</table>
