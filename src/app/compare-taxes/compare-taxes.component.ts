@@ -11,14 +11,14 @@ export class CompareTaxesComponent implements OnDestroy {
   data: any = undefined;
   constructor(public dataService: IncomeDataService, private alertService: AlertService) { 
     dataService.isLoading = true;
+    alertService.info('Loading data...');
     this.dataService.submitForms().subscribe((data: any) => {
-      alertService.info('Loading data...');
       this.data = data.data;
       this.dataService.isLoading = false;
       alertService.info('The data has been loaded successfully');
     }, (error: any) => { 
       this.dataService.isLoading = false;
-      this.alertService.error(error.error.message);
+      this.alertService.error(error.error.message || 'An error has occurred');
     });   
    }
 
