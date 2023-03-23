@@ -235,14 +235,14 @@ class CompareTaxesComponent {
     this.alertService = alertService;
     this.data = undefined;
     dataService.isLoading = true;
+    alertService.info('Loading data...');
     this.dataService.submitForms().subscribe(data => {
-      alertService.info('Loading data...');
       this.data = data.data;
       this.dataService.isLoading = false;
       alertService.info('The data has been loaded successfully');
     }, error => {
       this.dataService.isLoading = false;
-      this.alertService.error(error.error.message);
+      this.alertService.error(error.error.message || 'An error has occurred');
     });
   }
   ngOnDestroy() {
