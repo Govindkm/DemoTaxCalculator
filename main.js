@@ -45,6 +45,9 @@ var routes = [{
   path: 'summary',
   component: _compare_taxes_compare_taxes_component__WEBPACK_IMPORTED_MODULE_0__.CompareTaxesComponent,
   canActivate: [_income_filled_guard__WEBPACK_IMPORTED_MODULE_3__.IncomeFilledGuard]
+}, {
+  path: '**',
+  redirectTo: ''
 }];
 var AppRoutingModule = /** @class */function () {
   function AppRoutingModule() {}
@@ -131,10 +134,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 2508);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ 7146);
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-toastr */ 4817);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ 7146);
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-toastr */ 4817);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-routing.module */ 158);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _income_form_income_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./income-form/income-form.component */ 1005);
@@ -143,8 +146,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _compare_taxes_compare_taxes_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./compare-taxes/compare-taxes.component */ 5553);
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./navbar/navbar.component */ 6313);
 /* harmony import */ var _compare_taxes_comparision_table_comparision_table_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./compare-taxes/comparision-table/comparision-table.component */ 6047);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ 8987);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 8987);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 
@@ -170,7 +175,11 @@ var AppModule = /** @class */function () {
     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent]
   });
   AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({
-    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.ReactiveFormsModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__.BrowserAnimationsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpClientModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_13__.ToastrModule.forRoot()]
+    providers: [{
+      provide: _angular_common__WEBPACK_IMPORTED_MODULE_9__.LocationStrategy,
+      useClass: _angular_common__WEBPACK_IMPORTED_MODULE_9__.HashLocationStrategy
+    }],
+    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.ReactiveFormsModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__.BrowserAnimationsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HttpClientModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_14__.ToastrModule.forRoot()]
   });
   return AppModule;
 }();
@@ -178,7 +187,7 @@ var AppModule = /** @class */function () {
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵsetNgModuleScope"](AppModule, {
     declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _income_form_income_form_component__WEBPACK_IMPORTED_MODULE_2__.IncomeFormComponent, _deduction_form_deduction_form_component__WEBPACK_IMPORTED_MODULE_3__.DeductionFormComponent, _exemption_form_exemption_form_component__WEBPACK_IMPORTED_MODULE_4__.ExemptionFormComponent, _compare_taxes_compare_taxes_component__WEBPACK_IMPORTED_MODULE_5__.CompareTaxesComponent, _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__.NavbarComponent, _compare_taxes_comparision_table_comparision_table_component__WEBPACK_IMPORTED_MODULE_7__.ComparisionTableComponent],
-    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.ReactiveFormsModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__.BrowserAnimationsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpClientModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_13__.ToastrModule]
+    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__.BrowserModule, _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.ReactiveFormsModule, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__.BrowserAnimationsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_13__.HttpClientModule, ngx_toastr__WEBPACK_IMPORTED_MODULE_14__.ToastrModule]
   });
 })();
 
