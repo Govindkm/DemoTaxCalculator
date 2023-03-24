@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'income-details', component: IncomeFormComponent },
   { path: 'deductions', component: DeductionFormComponent, canActivate: [IncomeFilledGuard] },
   { path: 'exemptions', component: ExemptionFormComponent, canActivate: [IncomeFilledGuard] },
-  { path: 'summary', component: CompareTaxesComponent, canActivate: [IncomeFilledGuard]}
+  { path: 'summary', component: CompareTaxesComponent, canActivate: [IncomeFilledGuard]},
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -13,6 +13,8 @@ import { CompareTaxesComponent } from './compare-taxes/compare-taxes.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ComparisionTableComponent } from './compare-taxes/comparision-table/comparision-table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
