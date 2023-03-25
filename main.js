@@ -673,7 +673,7 @@ var IncomeDataService = /** @class */function () {
       closeButton: true,
       positionClass: "toast-bottom-center"
     };
-    this.apiURL = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl + 'calculation/';
+    this.apiURL = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl + 'calculation';
   }
   IncomeDataService.prototype.submitForms = function () {
     var _a, _b, _c;
