@@ -80,7 +80,7 @@ describe('IncomeDataService', () => {
 
   describe('submitForms', () => {
     it('should make an http post request', () => {
-      const url = environment.apiUrl + 'calculation//getTaxes';
+      const url = environment.apiUrl + 'calculation/getTaxes';
       const data = {
         incomeForm: {},
         deductionForm: {},
