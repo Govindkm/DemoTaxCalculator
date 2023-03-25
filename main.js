@@ -1106,7 +1106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var environment = {
   production: false,
-  apiUrl: 'http://ec2-3-145-75-78.us-east-2.compute.amazonaws.com/api/'
+  apiUrl: 'http://ec2-3-145-75-78.us-east-2.compute.amazonaws.com/api'
 };
 
 /***/ }),
