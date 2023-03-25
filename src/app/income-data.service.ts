@@ -33,7 +33,7 @@ export class IncomeDataService {
     this.createDeductionForm();
     this.createExemptionForm();
     this.alertService.options = {closeButton: true, positionClass: "toast-bottom-center"};
-    this.apiURL = environment.apiUrl + 'calculation/';
+    this.apiURL = environment.apiUrl + 'calculation';
   }
 
   submitForms() {
