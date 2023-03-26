@@ -9,5 +9,10 @@
   },
   "devDependencies": {
     "testcafe": "*"
+  },
+  "scripts": {
+    "test:chrome": "testcafe chrome tests/",
+    "test:firefox": "testcafe firefox tests/",
+    "test:all": "testcafe chrome,firefox tests/"
   }
 }
