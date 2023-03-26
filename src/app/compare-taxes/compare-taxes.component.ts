@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { IncomeDataService } from '../income-data.service';
 import { AlertService } from '../services/alert.service';
 
@@ -9,7 +10,7 @@ import { AlertService } from '../services/alert.service';
 })
 export class CompareTaxesComponent implements OnDestroy {
   data: any = undefined;
-  constructor(public dataService: IncomeDataService, private alertService: AlertService) { 
+  constructor(public dataService: IncomeDataService, private alertService: AlertService, private router: Router) { 
     dataService.isLoading = true;
     alertService.info('Loading data...');
     this.dataService.submitForms().subscribe((data: any) => {
@@ -18,6 +19,11 @@ export class CompareTaxesComponent implements OnDestroy {
       alertService.info('The data has been loaded successfully');
     }, (error: any) => { 
       this.dataService.isLoading = false;
+      if(error.status === 422){
+        console.log(error);
+        this.alertService.error('Form validation error: ' + JSON.stringify(error.error.formErrors) || 'An error has occurred');
+        this.router.navigate(['/income-details']);
+      }
       this.alertService.error(error.error.message || 'An error has occurred');
     });   
    }
