@@ -1,8 +1,86 @@
+## You
+
+I have a service wih following code:
+
+import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AlertService {
+
+  private _options: { 
+    closeButton: boolean;
+    positionClass: string;
+  }
+
+  constructor(private toastr: ToastrService) {
+    this._options = {
+      closeButton: true,
+      positionClass: 'toast-top-right'
+    }
+   }
+
+  success(message: string, title?: string) {
+    this.toastr.success(message, title, this.options);
+  }
+
+  error(message: string, title?: string) {
+    this.toastr.error(message, title, this.options);
+  }
+
+  warning(message: string, title?: string) {
+    this.toastr.warning(message, title, this.options);
+  }
+
+  info(message: string, title?: string) {
+    this.toastr.info(message, title, this.options);
+  }
+
+  get options() {
+    return this._options;
+  }
+
+  set options(options: { closeButton: boolean; positionClass: string; }) {
+    this._options = options;
+  }
+
+}
+
+and I have setup test bench like this:
+
 import { TestBed, inject } from '@angular/core/testing';
 import { ToastrService, ToastrModule } from 'ngx-toastr';
 
 import { AlertService } from './alert.service';
 
+describe('AlertService', () => {
+  let alertService: AlertService;
+  let toastrService: ToastrService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ToastrModule.forRoot()],
+      providers: [AlertService, ToastrService]
+    });
+  });
+
+  beforeEach(inject([AlertService, ToastrService], (_alertService: AlertService, _toastrService: ToastrService) => {
+    alertService = _alertService;
+    toastrService = _toastrService;
+  }));
+ 
+});
+
+
+Write unit tests for the service.
+
+## Genie
+
+Sure, I can help you with that. We can write unit tests for the `AlertService` using Jasmine testing framework. Here's an example:
+
+```
 describe('AlertService', () => {
   let alertService: AlertService;
   let toastrService: ToastrService;
@@ -89,3 +167,8 @@ describe('AlertService', () => {
   });
 });
 
+```
+
+In the above example, we have covered all the methods in the `AlertService` along with the default options. We have used Jasmine's `spyOn` function to spy on the `ToastrService` methods and checked if they were called with the correct parameters.
+
+I hope this helps you in writing unit tests for your service. Let me know if you have any more questions or need any further assistance.
