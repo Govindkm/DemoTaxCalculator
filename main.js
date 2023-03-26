@@ -206,8 +206,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _income_data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../income-data.service */ 8430);
 /* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/alert.service */ 5970);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 4666);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _comparision_table_comparision_table_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comparision-table/comparision-table.component */ 6047);
+
 
 
 
@@ -249,10 +251,11 @@ function CompareTaxesComponent_div_1_Template(rf, ctx) {
   }
 }
 var CompareTaxesComponent = /** @class */function () {
-  function CompareTaxesComponent(dataService, alertService) {
+  function CompareTaxesComponent(dataService, alertService, router) {
     var _this = this;
     this.dataService = dataService;
     this.alertService = alertService;
+    this.router = router;
     this.data = undefined;
     dataService.isLoading = true;
     alertService.info('Loading data...');
@@ -262,6 +265,11 @@ var CompareTaxesComponent = /** @class */function () {
       alertService.info('The data has been loaded successfully');
     }, function (error) {
       _this.dataService.isLoading = false;
+      if (error.status === 422) {
+        console.log(error);
+        _this.alertService.error('Form validation error: ' + JSON.stringify(error.error.formErrors) || 0);
+        _this.router.navigate(['/income-details']);
+      }
       _this.alertService.error(error.error.message || 'An error has occurred');
     });
   }
@@ -272,7 +280,7 @@ var CompareTaxesComponent = /** @class */function () {
     return Math.abs(this.data.oldRegimeTax.tax - this.data.newRegimeTax.tax);
   };
   CompareTaxesComponent.ɵfac = function CompareTaxesComponent_Factory(t) {
-    return new (t || CompareTaxesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_income_data_service__WEBPACK_IMPORTED_MODULE_0__.IncomeDataService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_services_alert_service__WEBPACK_IMPORTED_MODULE_1__.AlertService));
+    return new (t || CompareTaxesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_income_data_service__WEBPACK_IMPORTED_MODULE_0__.IncomeDataService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_services_alert_service__WEBPACK_IMPORTED_MODULE_1__.AlertService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.Router));
   };
   CompareTaxesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
     type: CompareTaxesComponent,
@@ -291,7 +299,7 @@ var CompareTaxesComponent = /** @class */function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx.dataService.isLoading && ctx.data != undefined);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, _comparision_table_comparision_table_component__WEBPACK_IMPORTED_MODULE_2__.ComparisionTableComponent],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _comparision_table_comparision_table_component__WEBPACK_IMPORTED_MODULE_2__.ComparisionTableComponent],
     styles: [".sr-only[_ngcontent-%COMP%] {\n    position: absolute;\n    width: 1px;\n    height: 1px;\n    padding: 0;\n    margin: -1px;\n    overflow: hidden;\n    clip: rect(0, 0, 0, 0);\n    white-space: nowrap;\n    border: 0;\n}\n\n.spinner-border[_ngcontent-%COMP%]{\n    height: 10rem;\n    width: 10rem;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvY29tcGFyZS10YXhlcy9jb21wYXJlLXRheGVzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLFdBQVc7SUFDWCxVQUFVO0lBQ1YsWUFBWTtJQUNaLGdCQUFnQjtJQUNoQixzQkFBc0I7SUFDdEIsbUJBQW1CO0lBQ25CLFNBQVM7QUFDYjs7QUFFQTtJQUNJLGFBQWE7SUFDYixZQUFZO0FBQ2hCIiwic291cmNlc0NvbnRlbnQiOlsiLnNyLW9ubHkge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB3aWR0aDogMXB4O1xuICAgIGhlaWdodDogMXB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgbWFyZ2luOiAtMXB4O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgY2xpcDogcmVjdCgwLCAwLCAwLCAwKTtcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICAgIGJvcmRlcjogMDtcbn1cblxuLnNwaW5uZXItYm9yZGVye1xuICAgIGhlaWdodDogMTByZW07XG4gICAgd2lkdGg6IDEwcmVtO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
   return CompareTaxesComponent;
