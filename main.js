@@ -1114,7 +1114,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var environment = {
   production: false,
-  apiUrl: 'http://calculatetaxapi.us-east-2.elasticbeanstalk.com/api/'
+  apiUrl: 'https://calculatetaxapi.us-east-2.elasticbeanstalk.com/api/'
 };
 
 /***/ }),
