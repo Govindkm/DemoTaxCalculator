@@ -1,7 +1,10 @@
 import { Selector, t } from 'testcafe';
 
+const BaseUrl = 'https://govindkm.github.io/DemoTaxCalculator';
+
+
 fixture `Income Details Page`
-  .page `http://192.168.31.63:4200/income-details`;
+  .page `${BaseUrl}/#/income-details`;
 
 test('Validate Income Form Fields with Journeys', async (t) => {
 
@@ -67,7 +70,7 @@ test("Should be able to access other forms without filling income details form c
   await t.expect(alert.innerText).contains('Please fill in your income details first');
 });
 
-fixture('Deductions Page').page('http://192.168.31.63:4200/income-details');
+fixture('Deductions Page').page(`${BaseUrl}/#/deductions`);
 // Generate testcafe test case to check form validation for this: HTML <div class="form-group" formGroupName="section80C"> <div class="form-group"> <label for="ppf">PPF</label> <input type="number" id="ppf" class="form-control" formControlName="ppf" value="0" min="0"> </div> <div class="form-group"> <label for="nps">NPS</label> <input type="number" id="nps" class="form-control" formControlName="nps" value="0" min="0"> </div> <div class="form-group"> <label for="elss">ELSS</label> <input type="number" id="elss" class="form-control" formControlName="elss" value="0" min="0"> </div> <div class="form-group"> <label for="others">Others</label> <input type="number" id="others" class="form-control" formControlName="others" value="0" min="0"> </div> </div> Typescript form: createDeductionForm() { this.deductionForm = this.fb.group({ section80C: this.fb.group({ ppf: [0], nps: [0], elss: [0], others: [0] }, { validator: this.sum80Cvalidator }), section80D: this.fb.group({ employerHIS: [0], selfHIS: [0] }, { validator: this.sum80Dvalidator }), section80G: [0, Validators.max(10000)] }); }
 test('Form should show error when sum of section80C is greater than 150000', async (t) => {
 
