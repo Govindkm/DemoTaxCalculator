@@ -1,0 +1,47 @@
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 10px;
+}
+
+.user-message {
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.ai-message {
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* or whatever height you want */
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    overflow-y: scroll;
+}
+
+.input-group {
+  position: relative;
+  align-items: center;
+  padding: 10px;
+  background-color: #f7f7f7;
+  margin-top: auto;
+  width: auto;
+}

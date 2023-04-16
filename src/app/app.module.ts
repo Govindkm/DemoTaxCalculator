@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ComparisionTableComponent } from './compare-taxes/comparision-table/comparision-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 
 @NgModule({
@@ -24,12 +25,14 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     ExemptionFormComponent,
     CompareTaxesComponent,
     NavbarComponent,
-    ComparisionTableComponent
+    ComparisionTableComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ToastrModule.forRoot()
