@@ -1,5 +1,5 @@
 <div class="chatbot">
-  <button class="btn btn-primary" (click)="openChat()">Chat</button>
+  <button class="btn btn-primary" (click)="openChat()" id="chatbotbutton"></button>
   <div class="chat-window" *ngIf="showChat">
     <!-- Chat window content goes here -->
     <div *ngFor="let message of messages" [class.user-message]="message.from === 'user'" [class.ai-message]="message.from === 'ai'">
