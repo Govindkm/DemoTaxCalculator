@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -12,7 +13,7 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, ToastrModule.forRoot(), HttpClientModule],
-      declarations: [AppComponent, NavbarComponent]
+      declarations: [AppComponent, NavbarComponent, ChatbotComponent]
     })
       .compileComponents();
   });
