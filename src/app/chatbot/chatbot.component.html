@@ -1,0 +1,14 @@
+<div class="chatbot">
+  <button class="btn btn-primary" (click)="openChat()" id="chatbotbutton"></button>
+  <div class="chat-window" *ngIf="showChat">
+    <!-- Chat window content goes here -->
+    <div *ngFor="let message of messages" [class.user-message]="message.from === 'user'" [class.ai-message]="message.from === 'ai'">
+      {{ message.content }}
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Type your message here" [(ngModel)]="userMessage" (keyup.enter)="sendMessage(userMessage)">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="sendMessage(userMessage)">Send</button>
+      </div>
+  </div>
+</div>
