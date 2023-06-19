@@ -1,0 +1,72 @@
+**Test Case 1: Verify default values**
+- Description: Verify that all input fields have default values of 0.
+- Test Steps:
+  1. Load the UI component.
+- Expected Result: All input fields should have a default value of 0.
+
+**Test Case 2: Verify input validation - Negative values**
+- Description: Verify that validation errors are displayed when entering negative values.
+- Test Steps:
+  1. Enter a negative value (-100) in any input field.
+- Expected Result: A validation error should be displayed indicating that negative values are not allowed.
+
+**Test Case 3: Verify input validation - Non-numeric values**
+- Description: Verify that validation errors are displayed when entering non-numeric values.
+- Test Steps:
+  1. Enter a non-numeric value (e.g., text) in any input field.
+- Expected Result: A validation error should be displayed indicating that only numeric values are allowed.
+
+**Test Case 4: Verify Section 80C deductions**
+- Description: Verify the calculation and validation of Section 80C deductions.
+- Test Steps:
+  1. Enter valid values (e.g., 50000) in the PPF, ELSS, and Others fields.
+- Expected Result:
+  - The total deduction under Section 80C should be calculated correctly.
+  - The total deduction should not exceed the maximum limit of Rs 2,00,000.
+  - No validation error should be displayed.
+
+**Test Case 5: Verify NPS deduction**
+- Description: Verify the calculation and validation of NPS deduction.
+- Test Steps:
+  1. Enter a valid value (e.g., 30000) in the NPS field.
+- Expected Result:
+  - The NPS deduction should be accepted.
+  - An additional deduction of up to Rs 50,000 should be claimed if investing under NPS.
+  - No validation error should be displayed.
+
+**Test Case 6: Verify Section 80D deductions**
+- Description: Verify the calculation and validation of Section 80D deductions.
+- Test Steps:
+  1. Check the "Are your parents senior citizen with Age>60?" checkbox.
+  2. Enter valid values (e.g., 25000) in the Parents Health Insurance Schemes and Self Health Insurance Schemes fields.
+- Expected Result:
+  - The total deduction under Section 80D should be calculated correctly based on the checkbox selection and entered values.
+  - The total deduction should not exceed the maximum limit of Rs 1,00,000.
+  - No validation error should be displayed.
+
+**Test Case 7: Verify Section 80G deductions**
+- Description: Verify the calculation and validation of Section 80G deductions.
+- Test Steps:
+  1. Enter a valid value (e.g., 8000) in the Section 80G field.
+- Expected Result:
+  - The Section 80G deduction should be accepted.
+  - The deduction should not exceed the maximum limit of Rs 10,000.
+  - No validation error should be displayed.
+
+**Test Case 8: Submit the form successfully**
+- Description: Verify that the form can be successfully submitted with valid values.
+- Test Steps:
+  1. Enter valid values in all input fields within the specified limits.
+  2. Submit the form.
+- Expected Result: The form should be submitted successfully without any errors.
+
+**Test Case 9: Verify form reset**
+- Description: Verify that the form can be reset to its initial state.
+- Test Steps:
+  1. Enter values in the input fields.
+  2. Click on the form reset button (if available) or perform the
+
+ necessary action to reset the form.
+- Expected Result: All input fields should be cleared or set to their initial/default values.
+
+These test cases cover various scenarios related to default values, input validation, deduction calculations, limits, and form submission. Feel free to modify or expand upon them based on your specific requirements.

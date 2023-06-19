@@ -5,13 +5,15 @@ import { DeductionFormComponent } from './deduction-form/deduction-form.componen
 import { ExemptionFormComponent } from './exemption-form/exemption-form.component';
 import { IncomeFilledGuard } from './income-filled.guard';
 import { IncomeFormComponent } from './income-form/income-form.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/income-details', pathMatch: 'full' },
-  { path: 'income-details', component: IncomeFormComponent },
+  { path: 'income-details', component: IncomeFormComponent, canActivate: [IncomeFilledGuard] },
   { path: 'deductions', component: DeductionFormComponent, canActivate: [IncomeFilledGuard] },
   { path: 'exemptions', component: ExemptionFormComponent, canActivate: [IncomeFilledGuard] },
   { path: 'summary', component: CompareTaxesComponent, canActivate: [IncomeFilledGuard]},
+  { path: 'chat', component: ChatbotComponent },
   { path: '**', redirectTo: '' }
 ];
 

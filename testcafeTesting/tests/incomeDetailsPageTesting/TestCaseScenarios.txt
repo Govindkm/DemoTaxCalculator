@@ -1,0 +1,74 @@
+Here are some functional test case scenarios for the provided UI component:
+
+1. Test Case: Verify validation for Basic Pay
+   - Description: Verify that the Basic Pay field is required and cannot have a value of zero or negative.
+   - Test Steps:
+     1. Leave the Basic Pay field empty.
+     2. Click outside the field to trigger validation.
+   - Expected Result: The field should display an error message indicating that Basic Pay cannot be zero or negative.
+
+2. Test Case: Verify input for Dearness Allowance (DA)
+   - Description: Verify that the user can input a non-negative value for Dearness Allowance.
+   - Test Steps:
+     1. Enter a positive value for DA.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+3. Test Case: Verify input for HRA
+   - Description: Verify that the user can input a non-negative value for House Rent Allowance (HRA).
+   - Test Steps:
+     1. Enter a positive value for HRA.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+4. Test Case: Verify input for LTA
+   - Description: Verify that the user can input a non-negative value for Leave Travel Allowance (LTA).
+   - Test Steps:
+     1. Enter a positive value for LTA.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+5. Test Case: Verify input for City Allowance
+   - Description: Verify that the user can input a non-negative value for City Allowance.
+   - Test Steps:
+     1. Enter a positive value for City Allowance.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+6. Test Case: Verify input for Miscellaneous
+   - Description: Verify that the user can input a non-negative value for Miscellaneous.
+   - Test Steps:
+     1. Enter a positive value for Miscellaneous.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+7. Test Case: Verify input for Monthly Bonus
+   - Description: Verify that the user can input a non-negative value for Monthly Bonus.
+   - Test Steps:
+     1. Enter a positive value for Monthly Bonus.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+8. Test Case: Verify input for Quarterly Bonus
+   - Description: Verify that the user can input a non-negative value for Quarterly Bonus.
+   - Test Steps:
+     1. Enter a positive value for Quarterly Bonus.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+9. Test Case: Verify input for Annual Bonus
+   - Description: Verify that the user can input a non-negative value for Annual Bonus.
+   - Test Steps:
+     1. Enter a positive value for Annual Bonus.
+     2. Click outside the field.
+   - Expected Result: The value should be accepted, and no error message should be displayed.
+
+10. Test Case: Verify default values
+    - Description: Verify that all input fields have default values of 0.
+    - Test Steps:
+      1. Load the UI component.
+    - Expected Result: All input fields should have a default value of 0.
+
+These test cases cover various scenarios such as
+
+ field validation, input acceptance, and default values. You can extend the test cases based on specific requirements and edge cases.

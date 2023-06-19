@@ -8,7 +8,9 @@
     "url": "https://github.com/DevExpress/testcafe/issues"
   },
   "devDependencies": {
-    "testcafe": "*"
+    "testcafe": "*",
+    "testcafe-reporter-html": "^1.4.6",
+    "testcafe-reporter-tesults": "^1.1.0"
   },
   "scripts": {
     "test:chrome": "testcafe chrome tests/",
