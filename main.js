@@ -572,28 +572,28 @@ __webpack_require__.r(__webpack_exports__);
 
 function DeductionFormComponent_small_25_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Deduction under 80C cannot be more than \u20B9150000 ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 function DeductionFormComponent_small_27_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " NPS deduction cannot be more than \u20B950000 ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 function DeductionFormComponent_small_50_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Deduction under 80D cannot be more than \u20B9100000");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 function DeductionFormComponent_small_57_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Deduction under 80G cannot be more than \u20B910000 ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
@@ -616,7 +616,7 @@ var DeductionFormComponent = /** @class */function () {
     selectors: [["app-deduction-form"]],
     decls: 58,
     vars: 5,
-    consts: [[1, "container", "mt-3", 3, "formGroup", "ngSubmit"], [1, "row"], [1, "col-lg-6"], ["formGroupName", "section80C", 1, "form-group"], [1, "form-group"], ["for", "ppf"], ["type", "number", "id", "ppf", "formControlName", "ppf", "value", "0", "min", "0", 1, "form-control"], ["for", "elss"], ["type", "number", "id", "elss", "formControlName", "elss", "value", "0", "min", "0", 1, "form-control"], ["for", "others"], ["type", "number", "id", "others", "formControlName", "others", "value", "0", "min", "0", 1, "form-control"], ["for", "nps"], ["type", "number", "id", "nps", "formControlName", "nps", "value", "0", "min", "0", 1, "form-control"], [1, "text-info"], ["class", "text-danger", "id", "text-danger-80C", 4, "ngIf"], ["class", "text-danger", 4, "ngIf"], ["formGroupName", "section80D", 1, "form-group"], [1, "form-check"], ["type", "checkbox", "id", "yourAge", "name", "yourParentsAge", "formControlName", "yourParentsAge", 1, "form-check-input"], ["for", "yourAge"], ["for", "employerInsurance"], ["type", "number", "id", "parentsInsurance", "name", "parentsInsurance", "formControlName", "parentsHIS", "value", "0", "min", "0", 1, "form-control"], ["for", "selfInsurance"], ["type", "number", "id", "selfInsurance", "name", "selfInsurance", "formControlName", "selfHIS", "value", "0", "min", "0", 1, "form-control"], [1, "text-danger"], ["href", "https://cleartax.in/s/medical-insurance"], ["for", "section80G"], ["type", "number", "id", "section80G", "name", "section80G", "formControlName", "section80G", "value", "0", "min", "0", 1, "form-control"], ["id", "text-danger-80C", 1, "text-danger"]],
+    consts: [[1, "container", "mt-3", 3, "formGroup", "ngSubmit"], [1, "row"], [1, "col-lg-6"], ["formGroupName", "section80C", 1, "form-group"], [1, "form-group"], ["for", "ppf"], ["type", "number", "id", "ppf", "formControlName", "ppf", "value", "0", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], ["for", "elss"], ["type", "number", "id", "elss", "formControlName", "elss", "value", "0", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], ["for", "others"], ["type", "number", "id", "others", "formControlName", "others", "value", "0", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], ["for", "nps"], ["type", "number", "id", "nps", "formControlName", "nps", "value", "0", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], [1, "text-info"], ["class", "text-danger", "id", "text-danger-80C", 4, "ngIf"], ["class", "text-danger", "id", "text-danger-nps", 4, "ngIf"], ["formGroupName", "section80D", 1, "form-group"], [1, "form-check"], ["type", "checkbox", "id", "yourParentsAge", "name", "yourParentsAge", "formControlName", "yourParentsAge", 1, "form-check-input"], ["for", "yourParentsAge"], ["for", "employerInsurance"], ["type", "number", "id", "parentsInsurance", "name", "parentsInsurance", "formControlName", "parentsHIS", "value", "0", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], ["for", "selfInsurance"], ["type", "number", "id", "selfInsurance", "name", "selfInsurance", "formControlName", "selfHIS", "value", "0", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], [1, "text-danger"], ["href", "https://cleartax.in/s/medical-insurance"], ["class", "text-danger", "id", "text-danger-80D", 4, "ngIf"], ["for", "section80G"], ["type", "number", "id", "section80G", "name", "section80G", "formControlName", "section80G", "value", "0", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], ["class", "text-danger", "id", "text-danger-80G", 4, "ngIf"], ["id", "text-danger-80C", 1, "text-danger"], ["id", "text-danger-nps", 1, "text-danger"], ["id", "text-danger-80D", 1, "text-danger"], ["id", "text-danger-80G", 1, "text-danger"]],
     template: function DeductionFormComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0);
@@ -680,16 +680,16 @@ var DeductionFormComponent = /** @class */function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](48, "a", 25);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](49, "Clear Tax: Medical Claims");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](50, DeductionFormComponent_small_50_Template, 2, 0, "small", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](50, DeductionFormComponent_small_50_Template, 2, 0, "small", 26);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](51, "h4");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](52, "Others");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "div", 4)(54, "label", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "div", 4)(54, "label", 27);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](55, "Section 80G (Donations Maximum 10000)");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](56, "input", 27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](57, DeductionFormComponent_small_57_Template, 2, 0, "small", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](56, "input", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](57, DeductionFormComponent_small_57_Template, 2, 0, "small", 29);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
       }
       if (rf & 2) {
@@ -758,7 +758,7 @@ var ExemptionFormComponent = /** @class */function () {
     selectors: [["app-exemption-form"]],
     decls: 17,
     vars: 2,
-    consts: [[1, "container", "mt-3", 3, "formGroup"], [1, "row"], [1, "col-lg-6"], [1, "text-danger"], ["formGroupName", "salaryComponents", 1, "form-group"], [1, "form-group"], ["for", "hra"], ["type", "number", "id", "hra", "formControlName", "hra", 1, "form-control"], ["for", "lta"], ["type", "number", "id", "lta", "formControlName", "lta", 1, "form-control"], ["class", "text-danger", 4, "ngIf"]],
+    consts: [[1, "container", "mt-3", 3, "formGroup"], [1, "row"], [1, "col-lg-6"], [1, "text-danger"], ["formGroupName", "salaryComponents", 1, "form-group"], [1, "form-group"], ["for", "hra"], ["type", "number", "id", "hra", "formControlName", "hra", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], ["for", "lta"], ["type", "number", "id", "lta", "formControlName", "lta", "min", "0", "oninput", "validity.valid||(value=0);", 1, "form-control"], ["class", "text-danger", 4, "ngIf"]],
     template: function ExemptionFormComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0)(1, "div", 1)(2, "div", 2)(3, "h4");
@@ -786,7 +786,7 @@ var ExemptionFormComponent = /** @class */function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.exemptionForm.get("salaryComponents").get("hra").touched && ctx.exemptionForm.get("salaryComponents").errors);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupName],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.MinValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupName],
     styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
   });
   return ExemptionFormComponent;
@@ -877,9 +877,9 @@ var IncomeDataService = /** @class */function () {
   IncomeDataService.prototype.createDeductionForm = function () {
     this.deductionForm = this.fb.group({
       section80C: this.fb.group({
-        ppf: [0],
-        elss: [0],
-        others: [0]
+        ppf: [0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.min(0)],
+        elss: [0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.min(0)],
+        others: [0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.min(0)]
       }, {
         validator: this.sum80Cvalidator
       }),
