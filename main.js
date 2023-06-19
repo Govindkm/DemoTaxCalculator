@@ -11,13 +11,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _compare_taxes_compare_taxes_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./compare-taxes/compare-taxes.component */ 5553);
 /* harmony import */ var _deduction_form_deduction_form_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./deduction-form/deduction-form.component */ 9460);
 /* harmony import */ var _exemption_form_exemption_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./exemption-form/exemption-form.component */ 589);
 /* harmony import */ var _income_filled_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./income-filled.guard */ 1887);
 /* harmony import */ var _income_form_income_form_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./income-form/income-form.component */ 1005);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _chatbot_chatbot_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./chatbot/chatbot.component */ 8534);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 
@@ -32,7 +34,8 @@ var routes = [{
   pathMatch: 'full'
 }, {
   path: 'income-details',
-  component: _income_form_income_form_component__WEBPACK_IMPORTED_MODULE_4__.IncomeFormComponent
+  component: _income_form_income_form_component__WEBPACK_IMPORTED_MODULE_4__.IncomeFormComponent,
+  canActivate: [_income_filled_guard__WEBPACK_IMPORTED_MODULE_3__.IncomeFilledGuard]
 }, {
   path: 'deductions',
   component: _deduction_form_deduction_form_component__WEBPACK_IMPORTED_MODULE_1__.DeductionFormComponent,
@@ -46,6 +49,9 @@ var routes = [{
   component: _compare_taxes_compare_taxes_component__WEBPACK_IMPORTED_MODULE_0__.CompareTaxesComponent,
   canActivate: [_income_filled_guard__WEBPACK_IMPORTED_MODULE_3__.IncomeFilledGuard]
 }, {
+  path: 'chat',
+  component: _chatbot_chatbot_component__WEBPACK_IMPORTED_MODULE_5__.ChatbotComponent
+}, {
   path: '**',
   redirectTo: ''
 }];
@@ -54,19 +60,19 @@ var AppRoutingModule = /** @class */function () {
   AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) {
     return new (t || AppRoutingModule)();
   };
-  AppRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
+  AppRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({
     type: AppRoutingModule
   });
-  AppRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
-    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule.forRoot(routes), _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule]
+  AppRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({
+    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule.forRoot(routes), _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule]
   });
   return AppRoutingModule;
 }();
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵsetNgModuleScope"](AppRoutingModule, {
-    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule],
-    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](AppRoutingModule, {
+    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule],
+    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule]
   });
 })();
 
@@ -82,11 +88,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 124);
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navbar/navbar.component */ 6313);
-/* harmony import */ var _chatbot_chatbot_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chatbot/chatbot.component */ 8534);
-
 
 
 
@@ -97,29 +101,27 @@ var AppComponent = /** @class */function () {
   AppComponent.ɵfac = function AppComponent_Factory(t) {
     return new (t || AppComponent)();
   };
-  AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+  AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
     type: AppComponent,
     selectors: [["app-root"]],
-    decls: 10,
+    decls: 9,
     vars: 0,
     consts: [[1, "container", "d-flex", "mt-5"], [1, "heading", "text-center"], ["id", "router-outlet"]],
     template: function AppComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Calculate Your Income Tax");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "Compares your taxes under the new and old regimes");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "app-navbar");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](8, "router-outlet");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](9, "app-chatbot");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Calculate Your Income Tax");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Compares your taxes under the new and old regimes");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "app-navbar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](8, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
       }
     },
-    dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterOutlet, _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent, _chatbot_chatbot_component__WEBPACK_IMPORTED_MODULE_1__.ChatbotComponent],
+    dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterOutlet, _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_0__.NavbarComponent],
     styles: [".d-flex[_ngcontent-%COMP%]{\n    flex-direction: column;\n}\n.heading[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  transition: all 0.3s ease-out;\n}\n\n.heading[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]:hover {\n  transform: translateX(10px);\n}\n\n#router-outlet[_ngcontent-%COMP%] {\n    box-shadow: 8px 8px 15px #aaa;\n    padding: 2rem;\n    border-radius: 25px;\n    background-color: rgba(240, 240, 240, 0.8);\n  }\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxzQkFBc0I7QUFDMUI7QUFDQTtFQUNFLDZCQUE2QjtBQUMvQjs7QUFFQTtFQUNFLDJCQUEyQjtBQUM3Qjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLDBDQUEwQztFQUM1QyIsInNvdXJjZXNDb250ZW50IjpbIi5kLWZsZXh7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cbi5oZWFkaW5nIHAge1xuICB0cmFuc2l0aW9uOiBhbGwgMC4zcyBlYXNlLW91dDtcbn1cblxuLmhlYWRpbmcgcDpob3ZlciB7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgxMHB4KTtcbn1cblxuI3JvdXRlci1vdXRsZXQge1xuICAgIGJveC1zaGFkb3c6IDhweCA4cHggMTVweCAjYWFhO1xuICAgIHBhZGRpbmc6IDJyZW07XG4gICAgYm9yZGVyLXJhZGl1czogMjVweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI0MCwgMjQwLCAyNDAsIDAuOCk7XG4gIH1cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
   return AppComponent;
@@ -729,11 +731,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ExemptionFormComponent_small_12_Template(rf, ctx) {
+function ExemptionFormComponent_small_16_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Exemption under HRA cannot be more than \u20B950000 ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate2"](" Maximum HRA to claim: \u20B9", ctx_r0.exemptionForm.get("salaryComponents").errors.maxAllowedHRA, " & Maximum LTA to claim: \u20B9", ctx_r0.exemptionForm.get("salaryComponents").errors.maxAllowedLTA, " ");
   }
 }
 var ExemptionFormComponent = /** @class */function () {
@@ -751,7 +758,7 @@ var ExemptionFormComponent = /** @class */function () {
     selectors: [["app-exemption-form"]],
     decls: 17,
     vars: 2,
-    consts: [[1, "container", "mt-3", 3, "formGroup"], [1, "row"], [1, "col-lg-6"], [1, "text-danger"], ["formGroupName", "salaryComponents", 1, "form-group"], [1, "form-group"], ["for", "hra"], ["type", "number", "id", "hra", "formControlName", "hra", 1, "form-control"], ["class", "text-danger", 4, "ngIf"], ["for", "lta"], ["type", "number", "id", "lta", "formControlName", "lta", 1, "form-control"]],
+    consts: [[1, "container", "mt-3", 3, "formGroup"], [1, "row"], [1, "col-lg-6"], [1, "text-danger"], ["formGroupName", "salaryComponents", 1, "form-group"], [1, "form-group"], ["for", "hra"], ["type", "number", "id", "hra", "formControlName", "hra", 1, "form-control"], ["for", "lta"], ["type", "number", "id", "lta", "formControlName", "lta", 1, "form-control"], ["class", "text-danger", 4, "ngIf"]],
     template: function ExemptionFormComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0)(1, "div", 1)(2, "div", 2)(3, "h4");
@@ -765,17 +772,18 @@ var ExemptionFormComponent = /** @class */function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "input", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, ExemptionFormComponent_small_12_Template, 2, 0, "small", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 5)(14, "label", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Exempted LTA");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "div", 5)(13, "label", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](14, "Exempted LTA");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "input", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](15, "input", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, ExemptionFormComponent_small_16_Template, 2, 2, "small", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.exemptionForm);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.exemptionForm.get("salaryComponents").get("hra").touched && ctx.exemptionForm.get("salaryComponents").get("hra").errors);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.exemptionForm.get("salaryComponents").get("hra").touched && ctx.exemptionForm.get("salaryComponents").errors);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupName],
@@ -942,7 +950,9 @@ var IncomeDataService = /** @class */function () {
     var annualLta = lta ? lta * 12 : 0;
     var errors = {
       hraTooLarge: false,
-      ltaTooLarge: false
+      ltaTooLarge: false,
+      maxAllowedHRA: annualHra,
+      maxAllowedLTA: annualLta
     };
     if (annualHra < form.value.hra) {
       errors.hraTooLarge = true;
@@ -994,14 +1004,24 @@ var IncomeFilledGuard = /** @class */function () {
     this.router = router;
   }
   IncomeFilledGuard.prototype.canActivate = function (route, state) {
-    var _a;
-    if (((_a = this.dataService.incomeform.get('basicpay')) === null || _a === void 0 ? void 0 : _a.value) <= 0) {
+    var _a, _b, _c, _d, _e, _f;
+    var currenNavigation = (_a = this.router.getCurrentNavigation()) === null || _a === void 0 ? void 0 : _a.extractedUrl.toString();
+    if (((_b = this.dataService.incomeform.get('basicpay')) === null || _b === void 0 ? void 0 : _b.value) <= 0 && currenNavigation != "/income-details") {
       this.alertService.error('Please fill in your income details first.');
       this.router.navigate(['/income-details']);
       return false;
-    } else {
-      return true;
     }
+    if ((((_c = this.dataService.deductionForm.get("section80C")) === null || _c === void 0 ? void 0 : _c.errors) || ((_d = this.dataService.deductionForm.get('section80D')) === null || _d === void 0 ? void 0 : _d.errors) || ((_e = this.dataService.deductionForm.get('section80G')) === null || _e === void 0 ? void 0 : _e.errors)) && currenNavigation != "/deductions") {
+      this.alertService.error('Please fill in your deduction details correctly.');
+      this.router.navigate(['/deductions']);
+      return false;
+    }
+    if (((_f = this.dataService.exemptionForm.get('salaryComponents')) === null || _f === void 0 ? void 0 : _f.errors) && currenNavigation != "/exemptions") {
+      this.alertService.error('Please fill in your exemption details correctly.');
+      this.router.navigate(['/exemptions']);
+      return false;
+    }
+    return true;
   };
   IncomeFilledGuard.ɵfac = function IncomeFilledGuard_Factory(t) {
     return new (t || IncomeFilledGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_income_data_service__WEBPACK_IMPORTED_MODULE_0__.IncomeDataService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_services_alert_service__WEBPACK_IMPORTED_MODULE_1__.AlertService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router));
@@ -1147,7 +1167,7 @@ __webpack_require__.r(__webpack_exports__);
 function NavbarComponent_span_8_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
@@ -1161,9 +1181,9 @@ var NavbarComponent = /** @class */function () {
   NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
     type: NavbarComponent,
     selectors: [["app-navbar"]],
-    decls: 10,
+    decls: 12,
     vars: 1,
-    consts: [[1, "nav", "nav-tabs", "nav-pills", "justify-content-center", "mt-5"], ["routerLink", "/income-details", "routerLinkActive", "active", "id", "incometab", 1, "nav-link"], ["routerLink", "/deductions", "routerLinkActive", "active", "id", "deductionstab", 1, "nav-link"], ["routerLink", "/exemptions", "routerLinkActive", "active", "id", "exemptionstab", 1, "nav-link"], ["routerLink", "/summary", "routerLinkActive", "active", "id", "summarytab", 1, "nav-link"], [4, "ngIf"], ["role", "status", "aria-hidden", "true", 1, "spinner-border", "spinner-border-sm"]],
+    consts: [[1, "nav", "nav-tabs", "nav-pills", "justify-content-center", "mt-5"], ["routerLink", "/income-details", "routerLinkActive", "active", "id", "incometab", 1, "nav-link"], ["routerLink", "/deductions", "routerLinkActive", "active", "id", "deductionstab", 1, "nav-link"], ["routerLink", "/exemptions", "routerLinkActive", "active", "id", "exemptionstab", 1, "nav-link"], ["routerLink", "/summary", "routerLinkActive", "active", "id", "summarytab", 1, "nav-link"], [4, "ngIf"], ["routerLink", "/chat", "routerLinkActive", "active", "id", "chatbottab", 1, "nav-link"], ["role", "status", "aria-hidden", "true", 1, "spinner-border", "spinner-border-sm"]],
     template: function NavbarComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nav", 0)(1, "a", 1);
@@ -1178,6 +1198,9 @@ var NavbarComponent = /** @class */function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "a", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, NavbarComponent_span_8_Template, 2, 0, "span", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Tax Summary");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Chatbot");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
