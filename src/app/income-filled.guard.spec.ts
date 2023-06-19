@@ -15,7 +15,7 @@ describe('IncomeFilledGuard', () => {
   beforeEach(() => {
     const incomeDataServiceSpy = jasmine.createSpyObj('IncomeDataService', ['get']);
     const alertServiceSpy = jasmine.createSpyObj('AlertService', ['error']);
-    const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    const routerSpy = jasmine.createSpyObj('Router', ['navigate', 'getCurrentNavigation']);
 
     TestBed.configureTestingModule({
       providers: [
@@ -37,6 +37,17 @@ describe('IncomeFilledGuard', () => {
   });
 
   describe('canActivate', () => {
+    beforeEach(() => {
+      incomeDataService.deductionForm = {
+        get: jasmine.createSpy().and.returnValue({ value: 1000 })
+      } as any;
+
+      incomeDataService.exemptionForm = {
+        get: jasmine.createSpy().and.returnValue({ value: 1000 })
+      } as any;
+
+    }); 
+
     it('should return true if income form has basicpay value greater than 0', () => {
       incomeDataService.incomeform = {
         get: jasmine.createSpy().and.returnValue({ value: 1000 })

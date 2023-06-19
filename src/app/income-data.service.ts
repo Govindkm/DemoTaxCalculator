@@ -140,7 +140,7 @@ export class IncomeDataService {
 
     const annualHra = hra ? hra * 12: 0;
     const annualLta = lta ? lta * 12: 0;
-    var errors = { hraTooLarge: false, ltaTooLarge: false };
+    var errors = { hraTooLarge: false, ltaTooLarge: false, maxAllowedHRA: annualHra,  maxAllowedLTA: annualLta};
 
     
     if (annualHra < form.value.hra) {
