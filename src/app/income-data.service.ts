@@ -77,9 +77,9 @@ export class IncomeDataService {
   createDeductionForm() {
     this.deductionForm = this.fb.group({
       section80C: this.fb.group({
-        ppf: [0],
-        elss: [0],
-        others: [0]
+        ppf: [0, Validators.min(0)],
+        elss: [0, Validators.min(0)],
+        others: [0, Validators.min(0)]
       }, { validator: this.sum80Cvalidator }),
       nps: [0, Validators.max(50000)],
       section80D: this.fb.group({
