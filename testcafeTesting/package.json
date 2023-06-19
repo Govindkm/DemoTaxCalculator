@@ -13,6 +13,7 @@
     "testcafe-reporter-tesults": "^1.1.0"
   },
   "scripts": {
+    "test": "node runner.js",
     "test:chrome": "testcafe chrome tests/",
     "test:firefox": "testcafe firefox tests/",
     "test:all": "testcafe chrome,firefox tests/"
