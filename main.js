@@ -410,7 +410,6 @@ var CompareTaxesComponent = /** @class */function () {
     this.router = router;
     this.data = undefined;
     dataService.isLoading = true;
-    alertService.info('Loading data...');
     this.dataService.submitForms().subscribe(function (data) {
       _this.data = data.data;
       _this.dataService.isLoading = false;
@@ -418,9 +417,10 @@ var CompareTaxesComponent = /** @class */function () {
     }, function (error) {
       _this.dataService.isLoading = false;
       if (error.status === 422) {
-        console.log(error);
+        console.error(error);
         _this.alertService.error('Form validation error: ' + JSON.stringify(error.error.formErrors) || 0);
         _this.router.navigate(['/income-details']);
+        return;
       }
       _this.alertService.error(error.error.message || 'An error has occurred');
     });
