@@ -15,6 +15,7 @@ import { ComparisionTableComponent } from './compare-taxes/comparision-table/com
 import { HttpClientModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { DocumentManagerComponent } from './document-manager/document-manager.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     CompareTaxesComponent,
     NavbarComponent,
     ComparisionTableComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    DocumentManagerComponent
   ],
   imports: [
     BrowserModule,
