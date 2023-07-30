@@ -65,14 +65,23 @@ test.meta("Description", "Verify that all input fields have default values of 0.
  
    // Assert that each input field has a default value of empty string
    await t.expect(basicPayInput.value).eql('');
+   console.log("Assertion 1 passed");
    await t.expect(dearnessAllowanceInput.value).eql('');
+   console.log("Assertion 2 passed");
    await t.expect(hraInput.value).eql('');
+   console.log("Assertion 3 passed");
    await t.expect(ltaInput.value).eql('');
+   console.log("Assertion 4 passed");
    await t.expect(cityAllowanceInput.value).eql('');
+   console.log("Assertion 5 passed");
    await t.expect(miscellaneousInput.value).eql('');
+   console.log("Assertion 6 passed");
    await t.expect(monthlyBonusInput.value).eql('');
+   console.log("Assertion 7 passed");
    await t.expect(quarterlyBonusInput.value).eql('');
+   console.log("Assertion 8 passed");
    await t.expect(annualBonusInput.value).eql('');
+   console.log("Assertion 9 passed");
 });
 
 test("Should be able to access other forms without filling income details form correctly", async (t) => {

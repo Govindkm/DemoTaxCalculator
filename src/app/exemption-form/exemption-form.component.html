@@ -13,7 +13,7 @@
             <input type="number" id="lta" class="form-control" formControlName="lta" min="0" oninput="validity.valid||(value=0);">
           </div>
         </div>
-        <small *ngIf="exemptionForm.get('salaryComponents').get('hra').touched && exemptionForm.get('salaryComponents').errors" class="text-danger">
+        <small *ngIf="exemptionForm.get('salaryComponents').get('hra').touched && exemptionForm.get('salaryComponents').errors" class="text-danger" id="exemptionError">
           Maximum HRA to claim: &#x20b9;{{exemptionForm.get('salaryComponents').errors.maxAllowedHRA}} & Maximum LTA to claim: &#x20b9;{{exemptionForm.get('salaryComponents').errors.maxAllowedLTA}}
         </small>
       </div>  

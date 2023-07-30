@@ -10,7 +10,7 @@ import { AlertService } from '../services/alert.service';
 })
 export class CompareTaxesComponent implements OnDestroy {
   data: any = undefined;
-  constructor(public dataService: IncomeDataService, private alertService: AlertService, private router: Router) { 
+  constructor(public dataService: IncomeDataService, private alertService: AlertService, public router: Router) { 
     dataService.isLoading = true;
     this.dataService.submitForms().subscribe((data: any) => {
       this.data = data.data;

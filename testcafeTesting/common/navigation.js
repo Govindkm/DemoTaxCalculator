@@ -1,12 +1,13 @@
 import { t, Selector } from "testcafe";
+import { navigationBarLinksSelectors } from "../selectors/navbarSelectors";
 
 class NavigationHelper {
     constructor(){
-        this.incomeDetailsBtn = Selector('#incometab');
-        this.deductionsBtn = Selector('#deductionstab');
-        this.exemptionsBtn = Selector('#exemptionstab');
-        this.taxSummaryBtn = Selector('#summarytab');
-        this.chatBotBtn = Selector('#chatbottab');
+        this.incomeDetailsBtn = Selector(navigationBarLinksSelectors.incomeDetails);
+        this.deductionsBtn = Selector(navigationBarLinksSelectors.deductions);
+        this.exemptionsBtn = Selector(navigationBarLinksSelectors.exemptions);
+        this.taxSummaryBtn = Selector(navigationBarLinksSelectors.taxSummary);
+        this.chatBotBtn = Selector(navigationBarLinksSelectors.chatbot);
     }
 
     async clickOnIncomeTab(){

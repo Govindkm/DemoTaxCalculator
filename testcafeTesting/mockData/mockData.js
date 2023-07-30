@@ -21,7 +21,7 @@ const deductionsPositiveData = {
   section80D: {
     yourParentsAge: true,
     parentsHIS: 30000,
-    selfHIS: 50000,
+    selfHIS: 20000,
   },
   section80G: 8000,
 };
@@ -171,6 +171,15 @@ const exemptionsNegativeData = {
 
 }
 
-export{incomePositiveData, deductionsNegativeData, deductionsPositiveData, exemptionsNegativeData, exemptionsPositveData};
+const deductionMessages = {
+  deductions80Cmorethanincome: "Total deductions claimed cannot be more than gross income",
+  self80D: "Deductions under Section 80D cannot be more than 25000 for self",
+  nonSeniorCitizen80D: 'Deductions under Section 80D cannot be more than 25000 for parents if they are not senior citizens',
+  seniorCitizen80D: 'Deductions under Section 80D cannot be more than 50000 for parents if they are senior citizens',
+  deductions80Gerror: 'Deduction under 80G cannot be more than ₹10000',
+  deductionsNPSerror: 'NPS deduction cannot be more than ₹50000'
+}
+
+export{incomePositiveData, deductionsNegativeData, deductionsPositiveData, exemptionsNegativeData, exemptionsPositveData, deductionMessages};
 
 

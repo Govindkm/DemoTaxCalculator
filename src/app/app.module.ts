@@ -26,7 +26,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     CompareTaxesComponent,
     NavbarComponent,
     ComparisionTableComponent,
-    ChatbotComponent
+    ChatbotComponent,
   ],
   imports: [
     BrowserModule,

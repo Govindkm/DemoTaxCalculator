@@ -1,3 +1,5 @@
+import { Selector } from "testcafe";
+
 const navigationBarLinksSelectors = {
     incomeDetails: 'a#incometab',
     deductions: 'a#deductionstab',
@@ -7,8 +9,9 @@ const navigationBarLinksSelectors = {
   };
 
 const errorSelectors = {
-    toastErrors: 'div[role="alert"]',
+    toastErrors: Selector('.toast-error'),
 }
+
 
 export{navigationBarLinksSelectors, errorSelectors};
   

@@ -8,14 +8,20 @@
     "url": "https://github.com/DevExpress/testcafe/issues"
   },
   "devDependencies": {
+    "istanbul-middleware": "^0.2.2",
+    "multiple-cucumber-html-reporter": "^3.4.0",
     "testcafe": "*",
     "testcafe-reporter-html": "^1.4.6",
     "testcafe-reporter-tesults": "^1.1.0"
   },
   "scripts": {
     "test": "node runner.js",
-    "test:chrome": "testcafe chrome tests/",
+    "test:chrome": "testcafe chrome:headless tests/",
     "test:firefox": "testcafe firefox tests/",
-    "test:all": "testcafe chrome,firefox tests/"
+    "test:all": "testcafe chrome,firefox tests/",
+    "report": "node ReportGenerator.js"
+  },
+  "dependencies": {
+    "testcafe-reporter-cucumber-json": "^6.3.0"
   }
 }

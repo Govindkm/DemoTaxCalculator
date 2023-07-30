@@ -1,0 +1,760 @@
+[
+  {
+    "description": "Deductions Page",
+    "elements": [
+      {
+        "id": "ScenarioVerify default values",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify default values",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify default values",
+            "result": {
+              "duration": 16642,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify default values</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify input validation - Negative values",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify input validation - Negative values",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify input validation - Negative values",
+            "result": {
+              "duration": 22618,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify input validation - Negative values</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify input validation - Non Numeric Characters",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify input validation - Non Numeric Characters",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify input validation - Non Numeric Characters",
+            "result": {
+              "duration": 21698,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify input validation - Non Numeric Characters</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioForm should show error when sum of section80C is greater than 150000",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Form should show error when sum of section80C is greater than 150000",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Form should show error when sum of section80C is greater than 150000",
+            "result": {
+              "duration": 22807,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Form should show error when sum of section80C is greater than 150000</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify NPS input",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify NPS input",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify NPS input",
+            "result": {
+              "duration": 24970,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify NPS input</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify Section 80D deductions for Senior Citizen Parents",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify Section 80D deductions for Senior Citizen Parents",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify Section 80D deductions for Senior Citizen Parents",
+            "result": {
+              "duration": 27395,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify Section 80D deductions for Senior Citizen Parents</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify Section 80D deductions for Non-Senior Citizen Parents with Invalid Parent Health Insurance Scheme",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify Section 80D deductions for Non-Senior Citizen Parents with Invalid Parent Health Insurance Scheme",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify Section 80D deductions for Non-Senior Citizen Parents with Invalid Parent Health Insurance Scheme",
+            "result": {
+              "duration": 21278,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify Section 80D deductions for Non-Senior Citizen Parents with Invalid Parent Health Insurance Scheme</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify Section 80G deductions",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify Section 80G deductions",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify Section 80G deductions",
+            "result": {
+              "duration": 25845,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify Section 80G deductions</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      }
+    ],
+    "id": "Deductions Page",
+    "keyword": "Feature",
+    "line": 0,
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "114.0.0.0"
+      },
+      "device": "Windows",
+      "platform": {
+        "name": "windows",
+        "version": "11"
+      },
+      "reportTime": "2023-06-29T16:13:52.312Z",
+      "startTime": "2023-06-29T16:08:54.944Z"
+    },
+    "name": "Deductions Page",
+    "skipped": false,
+    "tags": [
+      {
+        "line": 0,
+        "name": "@verify"
+      },
+      {
+        "line": 0,
+        "name": "@section"
+      },
+      {
+        "line": 0,
+        "name": "@80g"
+      },
+      {
+        "line": 0,
+        "name": "@deductions"
+      },
+      {
+        "line": 0,
+        "name": "@80d"
+      },
+      {
+        "line": 0,
+        "name": "@for"
+      },
+      {
+        "line": 0,
+        "name": "@non-senior"
+      },
+      {
+        "line": 0,
+        "name": "@citizen"
+      },
+      {
+        "line": 0,
+        "name": "@parents"
+      },
+      {
+        "line": 0,
+        "name": "@invalid"
+      },
+      {
+        "line": 0,
+        "name": "@parent"
+      },
+      {
+        "line": 0,
+        "name": "@health"
+      },
+      {
+        "line": 0,
+        "name": "@insurance"
+      },
+      {
+        "line": 0,
+        "name": "@scheme"
+      },
+      {
+        "line": 0,
+        "name": "@senior"
+      },
+      {
+        "line": 0,
+        "name": "@nps"
+      },
+      {
+        "line": 0,
+        "name": "@input"
+      },
+      {
+        "line": 0,
+        "name": "@form"
+      },
+      {
+        "line": 0,
+        "name": "@show"
+      },
+      {
+        "line": 0,
+        "name": "@error"
+      },
+      {
+        "line": 0,
+        "name": "@sum"
+      },
+      {
+        "line": 0,
+        "name": "@section80c"
+      },
+      {
+        "line": 0,
+        "name": "@greater"
+      },
+      {
+        "line": 0,
+        "name": "@than"
+      },
+      {
+        "line": 0,
+        "name": "@150000"
+      },
+      {
+        "line": 0,
+        "name": "@validation"
+      },
+      {
+        "line": 0,
+        "name": "@non"
+      },
+      {
+        "line": 0,
+        "name": "@numeric"
+      },
+      {
+        "line": 0,
+        "name": "@characters"
+      },
+      {
+        "line": 0,
+        "name": "@negative"
+      },
+      {
+        "line": 0,
+        "name": "@values"
+      },
+      {
+        "line": 0,
+        "name": "@default"
+      },
+      {
+        "line": 0,
+        "name": "@page"
+      }
+    ],
+    "uri": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\deductionPageTesting\\tests.js:1"
+  },
+  {
+    "description": "Exemption Page",
+    "elements": [
+      {
+        "id": "ScenarioAccept Valid Input",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Accept Valid Input",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\exemptionPageTesting\\tests.js:1:0"
+            },
+            "name": "Accept Valid Input",
+            "result": {
+              "duration": 25297,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Accept Valid Input</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioShow error messages for invalid inputs",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Show error messages for invalid inputs",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\exemptionPageTesting\\tests.js:1:0"
+            },
+            "name": "Show error messages for invalid inputs",
+            "result": {
+              "duration": 19826,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Show error messages for invalid inputs</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      }
+    ],
+    "id": "Exemption Page",
+    "keyword": "Feature",
+    "line": 0,
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "114.0.0.0"
+      },
+      "device": "Windows",
+      "platform": {
+        "name": "windows",
+        "version": "11"
+      },
+      "reportTime": "2023-06-29T16:13:52.312Z",
+      "startTime": "2023-06-29T16:08:54.944Z"
+    },
+    "name": "Exemption Page",
+    "skipped": false,
+    "tags": [
+      {
+        "line": 0,
+        "name": "@show"
+      },
+      {
+        "line": 0,
+        "name": "@error"
+      },
+      {
+        "line": 0,
+        "name": "@messages"
+      },
+      {
+        "line": 0,
+        "name": "@for"
+      },
+      {
+        "line": 0,
+        "name": "@invalid"
+      },
+      {
+        "line": 0,
+        "name": "@inputs"
+      },
+      {
+        "line": 0,
+        "name": "@accept"
+      },
+      {
+        "line": 0,
+        "name": "@valid"
+      },
+      {
+        "line": 0,
+        "name": "@input"
+      },
+      {
+        "line": 0,
+        "name": "@exemption"
+      },
+      {
+        "line": 0,
+        "name": "@page"
+      }
+    ],
+    "uri": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\exemptionPageTesting\\tests.js:1"
+  },
+  {
+    "description": "Income Details Page",
+    "elements": [
+      {
+        "id": "ScenarioVerify validation for Basic Pay",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify validation for Basic Pay",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\incomeDetailsPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify validation for Basic Pay",
+            "result": {
+              "duration": 17772,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify validation for Basic Pay</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify input for Income Details Page",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify input for Income Details Page",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\incomeDetailsPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify input for Income Details Page",
+            "result": {
+              "duration": 17234,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify input for Income Details Page</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioVerify default values",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Verify default values",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\incomeDetailsPageTesting\\tests.js:1:0"
+            },
+            "name": "Verify default values",
+            "result": {
+              "duration": 15032,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Verify default values</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      },
+      {
+        "id": "ScenarioShould be able to access other forms without filling income details form correctly",
+        "keyword": "Scenario",
+        "line": 0,
+        "name": "Should be able to access other forms without filling income details form correctly",
+        "skipped": false,
+        "sourceLine": "undefined",
+        "status": "passed",
+        "steps": [
+          {
+            "hidden": false,
+            "keyword": ">",
+            "match": {
+              "location": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\incomeDetailsPageTesting\\tests.js:1:0"
+            },
+            "name": "Should be able to access other forms without filling income details form correctly",
+            "result": {
+              "duration": 18860,
+              "status": "passed"
+            },
+            "tags": [],
+            "text": [
+              "<a href=\"#\">Should be able to access other forms without filling income details form correctly</a>"
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario",
+        "uri": ""
+      }
+    ],
+    "id": "Income Details Page",
+    "keyword": "Feature",
+    "line": 0,
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "114.0.0.0"
+      },
+      "device": "Windows",
+      "platform": {
+        "name": "windows",
+        "version": "11"
+      },
+      "reportTime": "2023-06-29T16:13:52.312Z",
+      "startTime": "2023-06-29T16:08:54.944Z"
+    },
+    "name": "Income Details Page",
+    "runInfo": {
+      "endTime": "2023-06-29T16:13:52.311Z",
+      "passed": 12,
+      "startTime": "2023-06-29T16:08:54.944Z",
+      "testCount": 14,
+      "userAgents": [
+        "Chrome 114.0.0.0 / Windows 11"
+      ],
+      "warnings": [
+        "The \"src\" option from the configuration file will be ignored."
+      ]
+    },
+    "skipped": false,
+    "tags": [
+      {
+        "line": 0,
+        "name": "@access"
+      },
+      {
+        "line": 0,
+        "name": "@other"
+      },
+      {
+        "line": 0,
+        "name": "@forms"
+      },
+      {
+        "line": 0,
+        "name": "@without"
+      },
+      {
+        "line": 0,
+        "name": "@filling"
+      },
+      {
+        "line": 0,
+        "name": "@income"
+      },
+      {
+        "line": 0,
+        "name": "@details"
+      },
+      {
+        "line": 0,
+        "name": "@form"
+      },
+      {
+        "line": 0,
+        "name": "@correctly"
+      },
+      {
+        "line": 0,
+        "name": "@verify"
+      },
+      {
+        "line": 0,
+        "name": "@default"
+      },
+      {
+        "line": 0,
+        "name": "@values"
+      },
+      {
+        "line": 0,
+        "name": "@input"
+      },
+      {
+        "line": 0,
+        "name": "@for"
+      },
+      {
+        "line": 0,
+        "name": "@page"
+      },
+      {
+        "line": 0,
+        "name": "@validation"
+      },
+      {
+        "line": 0,
+        "name": "@basic"
+      },
+      {
+        "line": 0,
+        "name": "@pay"
+      }
+    ],
+    "uri": "C:\\Users\\GOVIN\\Desktop\\IncomeTaxGPT\\NodeTaxApplication\\CalculateYourTaxWebApp\\testcafeTesting\\tests\\incomeDetailsPageTesting\\tests.js:1"
+  }
+]
