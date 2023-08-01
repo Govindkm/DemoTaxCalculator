@@ -66,5 +66,55 @@
   padding: 10px;
   background-color: #f7f7f7;
   margin-top: auto;
-  width: auto;
+}
+
+.messages-container {
+  height: calc(100% - 40px);
+  overflow-y: auto;
+  margin-top: auto;
+}
+
+.input-container {
+  height: 40px;
+  width: 100%;
+  display: flex;
+}
+
+
+.left-column {
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.file-menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.menu-item {
+  margin-bottom: 5px;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu.show {
+  display: block;
+}
+
+.submenu ul {
+  margin-top: 5px;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.submenu li {
+  margin-bottom: 5px;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: #000;
 }

@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { DocumentManagerService } from './document-manager.service';
 @Component({
   selector: 'app-document-manager',
   templateUrl: './document-manager.component.html',
@@ -11,22 +10,28 @@ export class DocumentManagerComponent {
   messages: [{content: string, from: string}] = [{content: 'Hi, how can I help you?', from: 'ai'}];
   showChat = false;
   public userMessage = '';
-  private apiURL = environment.apiUrl + 'chatbot/';
+  public selectedFile = '';
 
-  constructor(private http: HttpClient) { }
-
-  openChat() {
-    this.showChat = this.showChat ? false : true;
-  }
+  constructor(private documentService: DocumentManagerService) { }
 
   async sendMessage(message: string) {
     this.messages.push({ content: message, from: 'user' });
     this.userMessage = '';
-    // Call your API here to get AI response
-    const aiResponse = await this.http.post( this.apiURL + 'askquestion', { question: message });
-    aiResponse.subscribe((data: any) => {
-    this.messages.push({ content: data.text, from: 'ai' });
-    });
+    this.documentService.query(message).subscribe((response:any) => {
+      this.messages.push({content: response.result, from: 'ai'});
+    })
   }
 
+  toggleSubmenu(event: Event) {
+    const submenu = (event.currentTarget as HTMLElement).nextElementSibling;
+    submenu?.classList.toggle('show');
+  }
+  
+  showFile(filename: string) {
+    this.selectedFile = filename;
+  }
+
+  getFilePath(filename: string) {
+    return `assets/files/${filename}`;
+  }
 }

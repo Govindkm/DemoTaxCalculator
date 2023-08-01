@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DocumentManagerComponent } from './document-manager.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 describe('DocumentManagerComponent', () => {
   let component: DocumentManagerComponent;
@@ -8,6 +10,8 @@ describe('DocumentManagerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule, FormsModule],
+      providers: [HttpClient],
       declarations: [ DocumentManagerComponent ]
     })
     .compileComponents();
