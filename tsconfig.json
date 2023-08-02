@@ -16,8 +16,9 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es5",
-    "module": "es2015",
+    "target": "es2015",
+    "module": "CommonJS",
+    "esModuleInterop": true,
     "useDefineForClassFields": false,
     "lib": [
       "es2015",
