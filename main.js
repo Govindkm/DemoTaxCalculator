@@ -285,18 +285,24 @@ var ChatbotComponent = /** @class */function () {
   };
   ChatbotComponent.prototype.sendMessage = function (message) {
     return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, function () {
-      var aiResponse;
+      var chatHistory, i, m, aiResponse;
       var _this = this;
       return (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__generator)(this, function (_a) {
         switch (_a.label) {
           case 0:
+            chatHistory = '';
+            for (i = 0; i < this.messages.length; i++) {
+              m = this.messages[i];
+              chatHistory += "".concat(m.from, ": ").concat(m.content, "\n");
+            }
             this.messages.push({
               content: message,
               from: 'user'
             });
             this.userMessage = '';
             return [4 /*yield*/, this.http.post(this.apiURL + 'askquestion', {
-              question: message
+              question: message,
+              chatHistory: chatHistory
             })];
           case 1:
             aiResponse = _a.sent();
@@ -1200,7 +1206,7 @@ var NavbarComponent = /** @class */function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Tax Summary");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Chatbot");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "InsightAssist");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
