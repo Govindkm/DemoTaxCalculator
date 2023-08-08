@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { DocumentManagerService } from './document-manager.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DocumentViewerComponent } from './document-viewer/document-viewer.component';
+import { AlertService } from '../services/alert.service';
 
 describe('DocumentManagerService', () => {
   let service: DocumentManagerService;
@@ -9,7 +11,8 @@ describe('DocumentManagerService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[HttpClientModule],
-      providers: [HttpClient]
+      providers: [HttpClient, AlertService],
+      declarations: [ DocumentViewerComponent ]
     });
     service = TestBed.inject(DocumentManagerService);
   });

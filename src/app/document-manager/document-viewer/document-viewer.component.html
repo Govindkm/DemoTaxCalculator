@@ -1,25 +1,24 @@
 <div>
-    <h3>Files:</h3>
-    <ul>
-      <li *ngFor="let file of files">
-        <button (click)="onFileSelect(file)">{{ file.name }}</button>
-      </li>
-    </ul>
-    <hr>
-  
-    <div *ngIf="selectedFile && !isViewer">
-      <h3>Selected File:</h3>
-      <p>Name: {{ selectedFile.name }}</p>
-      <p>Type: {{ selectedFile.type }}</p>
-      <p>Size: {{ selectedFile.size }} bytes</p>
-      <p>Date Modified: {{selectedFile.date_modified}}</p>
-      <button (click)="onViewFile(selectedFile.name)">View</button>
-    </div>
+  <h3>Files:</h3>
+  <ul>
+    <li *ngFor="let file of files">
+      <button (click)="onFileSelect(file)">{{ file.name }}</button>
+    </li>
+  </ul>
+  <hr />
 
-    <pdf-viewer *ngIf="isViewer" [src]="'http://localhost:5000/api/v1/file/downloadFile/finance_bill.pdf'"
-              [render-text]="true"
-              [original-size]="false"
-              style="width: 400px; height: 500px"
-  ></pdf-viewer>
+  <div *ngIf="selectedFile && !isViewer">
+    <h3>Selected File:</h3>
+    <p>Name: {{ selectedFile.name }}</p>
+    <p>Type: {{ selectedFile.type }}</p>
+    <p>Size: {{ selectedFile.size }} bytes</p>
+    <p>Date Modified: {{ selectedFile.date_modified }}</p>
+    <button (click)="onViewFile(selectedFile.name)">View</button>
   </div>
-  
+
+  <!-- Simple DOM element for WebViewer to populate -->
+  <div class="page" *ngIf="isViewer">
+    <div class="header">WebViewer</div>
+    <div #viewer class="viewer"></div>
+  </div>
+</div>

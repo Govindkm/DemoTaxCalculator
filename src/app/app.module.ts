@@ -17,7 +17,6 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { DocumentManagerComponent } from './document-manager/document-manager.component';
 import { DocumentViewerComponent } from './document-manager/document-viewer/document-viewer.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -40,7 +39,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    PdfViewerModule,
     ToastrModule.forRoot()
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
