@@ -1173,7 +1173,7 @@ __webpack_require__.r(__webpack_exports__);
 function NavbarComponent_span_8_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
@@ -1187,9 +1187,9 @@ var NavbarComponent = /** @class */function () {
   NavbarComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
     type: NavbarComponent,
     selectors: [["app-navbar"]],
-    decls: 12,
+    decls: 10,
     vars: 1,
-    consts: [[1, "nav", "nav-tabs", "nav-pills", "justify-content-center", "mt-5"], ["routerLink", "/income-details", "routerLinkActive", "active", "id", "incometab", 1, "nav-link"], ["routerLink", "/deductions", "routerLinkActive", "active", "id", "deductionstab", 1, "nav-link"], ["routerLink", "/exemptions", "routerLinkActive", "active", "id", "exemptionstab", 1, "nav-link"], ["routerLink", "/summary", "routerLinkActive", "active", "id", "summarytab", 1, "nav-link"], [4, "ngIf"], ["routerLink", "/chat", "routerLinkActive", "active", "id", "chatbottab", 1, "nav-link"], ["role", "status", "aria-hidden", "true", 1, "spinner-border", "spinner-border-sm"]],
+    consts: [[1, "nav", "nav-tabs", "nav-pills", "justify-content-center", "mt-5"], ["routerLink", "/income-details", "routerLinkActive", "active", "id", "incometab", 1, "nav-link"], ["routerLink", "/deductions", "routerLinkActive", "active", "id", "deductionstab", 1, "nav-link"], ["routerLink", "/exemptions", "routerLinkActive", "active", "id", "exemptionstab", 1, "nav-link"], ["routerLink", "/summary", "routerLinkActive", "active", "id", "summarytab", 1, "nav-link"], [4, "ngIf"], ["role", "status", "aria-hidden", "true", 1, "spinner-border", "spinner-border-sm"]],
     template: function NavbarComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nav", 0)(1, "a", 1);
@@ -1204,9 +1204,6 @@ var NavbarComponent = /** @class */function () {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "a", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, NavbarComponent_span_8_Template, 2, 0, "span", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Tax Summary");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "InsightAssist");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
